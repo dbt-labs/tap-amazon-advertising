@@ -1,0 +1,60 @@
+{
+    "title": "ProductAdEx",
+    "type": "object",
+    "properties": {
+        "adId": {
+            "description": "The ID of the product ad",
+            "type": "integer"
+        },
+        "campaignId": {
+            "description": "The ID of the campaign to which this product ad belongs",
+            "type": "integer"
+        },
+        "adGroupId": {
+            "description": "The ID of the ad group to which this product ad belongs",
+            "type": "integer"
+        },
+        "sku": {
+            "description": "The SKU for the listed product to be advertised. Either this or the asin must be present.",
+            "type": "string"
+        },
+        "asin": {
+            "description": "The ASIN for the listed product to be advertised",
+            "type": "string"
+        },
+        "state": {
+            "description": "Advertiser-specified state of the product ad",
+            "type": "string",
+            "oneOf": [
+                "enabled",
+                "paused",
+                "archived"
+            ]
+        },
+        "creationDate": {
+            "description": "The date the ad group was created as epoch time in milliseconds",
+            "type": "integer"
+        },
+        "lastUpdatedDate": {
+            "description": "The date the ad group was last updated as epoch time in milliseconds",
+            "type": "integer"
+        },
+        "servingStatus": {
+            "description": "The computed status, accounting for out of budget, policy violations, etc. See developer notes for more information.",
+            "type": "string",
+            "oneOf": [
+                "AD_ARCHIVED",
+                "AD_PAUSED",
+                "AD_STATUS_LIVE",
+                "AD_POLICING_SUSPENDED",
+                "CAMPAIGN_OUT_OF_BUDGET",
+                "AD_GROUP_PAUSED",
+                "AD_GROUP_ARCHIVED",
+                "CAMPAIGN_PAUSED",
+                "CAMPAIGN_ARCHIVED",
+                "ACCOUNT_OUT_OF_BUDGET",
+                "MISSING_DECORATION"
+            ]
+        }
+    }
+}

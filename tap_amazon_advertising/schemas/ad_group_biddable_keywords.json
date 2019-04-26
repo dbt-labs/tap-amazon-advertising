@@ -1,0 +1,69 @@
+{
+    "title": "KeywordEx",
+    "type": "object",
+    "properties": {
+        "keywordId": {
+            "description": "The ID of the keyword",
+            "type": "integer"
+        },
+        "campaignId": {
+            "description": "The ID of the campaign to which this keyword belongs",
+            "type": "integer"
+        },
+        "adGroupId": {
+            "description": "The ID of the ad group to which this keyword belongs. ",
+            "type": "integer"
+        },
+        "state": {
+            "description": "Advertiser-specified state of the keyword",
+            "type": "string",
+            "oneOf": [
+                "enabled",
+                "paused",
+                "archived"
+            ]
+        },
+        "keywordText": {
+            "description": "The expression to match against search queries",
+            "type": "string"
+        },
+        "matchType": {
+            "description": "The match type used to match the keyword to search query",
+            "type": "string",
+            "oneOf": [
+                "exact",
+                "phrase",
+                "broad"
+            ]
+        },
+        "bid": {
+            "description": "Bid used when ads are sourced using this keyword",
+            "type": "number",
+            "minimum": 0.02
+        },
+        "creationDate": {
+            "description": "The date the ad group was created as epoch time in milliseconds",
+            "type": "integer"
+        },
+        "lastUpdatedDate": {
+            "description": "The date the ad group was last updated as epoch time in milliseconds",
+            "type": "integer"
+        },
+        "servingStatus": {
+            "description": "The computed status, accounting for out of budget, policy violations, etc. See developer notes for more information.",
+            "type": "string",
+            "oneOf": [
+                "TARGETING_CLAUSE_ARCHIVED",
+                "TARGETING_CLAUSE_PAUSED",
+                "TARGETING_CLAUSE_STATUS_LIVE",
+                "TARGETING_CLAUSE_POLICING_SUSPENDED",
+                "CAMPAIGN_OUT_OF_BUDGET",
+                "AD_GROUP_PAUSED",
+                "AD_GROUP_ARCHIVED",
+                "CAMPAIGN_PAUSED",
+                "CAMPAIGN_ARCHIVED",
+                "ACCOUNT_OUT_OF_BUDGET"
+            ]
+        }
+    }
+}

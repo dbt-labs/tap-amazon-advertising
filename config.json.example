@@ -1,0 +1,9 @@
+{
+    "app_key": "",
+    "app_secret": "",
+    "access_token": "",
+    "access_token_secret": "",
+    "account_id": 0,
+    "start_date": "2008-01-01T00:00:00Z",
+    "user_agent": "tap-liveperson <your-email@domain.com>"
+}

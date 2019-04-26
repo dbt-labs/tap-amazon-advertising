@@ -1,0 +1,63 @@
+{
+    "title": "PortfolioEx",
+    "type": "object",
+    "properties": {
+        "portfolioId": {
+            "description": "The ID of the portfolio.",
+            "type": "integer"
+        },
+        "name": {
+            "description": "The name of the portfolio.",
+            "type": "string"
+        },
+        "budget": {
+            "title": "PortfolioBudget",
+            "description": "The budget of the portfolio.",
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "description": "The budget amount.",
+                    "type": "number"
+                },
+                "currencyCode": {
+                    "description": "The currency code of the budget.",
+                    "type": "string"
+                },
+                "policy": {
+                    "description": "The policy of the portfolio.",
+                    "type": "string",
+                    "oneof": ["dateRange"]
+                },
+                "startDate": {
+                    "description": "The start date of the portfolio.",
+                    "type": "string"
+                },
+                "endDate": {
+                    "description": "The end date of the portfolio.",
+                    "type": "string"
+                }
+            }
+        },
+        "inBudget": {
+            "description": "States if the portfolio is still within budget.",
+            "type": "boolean"
+        },
+        "state": {
+            "description": "The status of the portfolio.",
+            "type": "string",
+            "oneof": ["enabled"]
+        },
+        "creationDate": {
+            "description": "The date the portfolio was created.",
+            "type": "integer"
+        },
+        "lastUpdatedDate": {
+            "description": "The date the portfolio was last updated.", 
+            "type": "integer"
+        },
+        "servingStatus": {
+            "description": "The serving status of the portfolio.", 
+            "type": "string"
+        }
+    }
+}

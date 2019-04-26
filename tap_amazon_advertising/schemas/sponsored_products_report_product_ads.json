@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "day": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "attributedSales7d": {},
+        "attributedSales30d": {},
+        "attributedUnitsOrdered30d": {},
+        "attributedSales1d": {},
+        "attributedConversions1d": {},
+        "attributedSales1dSameSKU": {},
+        "attributedConversions30d": {},
+        "adGroupId": {},
+        "attributedConversions7d": {},
+        "attributedConversions14d": {},
+        "currency": {},
+        "sku": {},
+        "attributedConversions7dSameSKU": {},
+        "attributedConversions1dSameSKU": {},
+        "cost": {},
+        "adGroupName": {},
+        "attributedUnitsOrdered7d": {},
+        "attributedSales7dSameSKU": {},
+        "campaignId": {},
+        "attributedSales14dSameSKU": {},
+        "attributedSales30dSameSKU": {},
+        "impressions": {},
+        "attributedUnitsOrdered1d": {},
+        "attributedConversions30dSameSKU": {},
+        "adId": {},
+        "attributedConversions14dSameSKU": {},
+        "clicks": {},
+        "asin": {},
+        "attributedSales14d": {},
+        "campaignName": {},
+        "attributedUnitsOrdered14d": {}
+    }
+}

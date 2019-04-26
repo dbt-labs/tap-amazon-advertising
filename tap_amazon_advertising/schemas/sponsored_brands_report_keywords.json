@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "day": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "keywordId": {},
+        "attributedSalesNewToBrand14d": {},
+        "cost": {},
+        "adGroupName": {},
+        "campaignId": {},
+        "matchType": {},
+        "attributedSales14dSameSKU": {},
+        "attributedOrdersNewToBrandPercentage14d": {},
+        "impressions": {},
+        "adGroupId": {},
+        "keywordText": {},
+        "campaignBudget": {},
+        "attributedOrderRateNewToBrand14d": {},
+        "attributedConversions14d": {},
+        "campaignBudgetType": {},
+        "campaignStatus": {},
+        "attributedConversions14dSameSKU": {},
+        "clicks": {},
+        "attributedOrdersNewToBrand14d": {},
+        "attributedUnitsOrderedNewToBrand14d": {},
+        "attributedSales14d": {},
+        "attributedSalesNewToBrandPercentage14d": {},
+        "campaignName": {},
+        "attributedUnitsOrderedNewToBrandPercentage14d": {}
+    }
+}
+
+

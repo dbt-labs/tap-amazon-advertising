@@ -1,0 +1,66 @@
+{
+  "title": "Profile",
+  "type": "object",
+  "properties": {
+    "profileId": {
+      "description": "The ID of the profile",
+      "type": "integer"
+    },
+    "countryCode": {
+      "description": "The country code identifying the publisher(s) on which ads will run",
+      "type": "string",
+      "oneOf": [
+        "US",
+        "CA",
+        "UK",
+        "DE",
+        "FR",
+        "IT",
+        "ES",
+        "JP"
+      ]
+    },
+    "currencyCode": {
+      "description": "The currency used for all monetary values for entities under this profile",
+      "type": "string",
+      "oneOf": [
+        "USD",
+        "CAD",
+        "GBP",
+        "EUR",
+        "JPY"
+      ]
+    },
+    "dailyBudget": {
+      "description": "The optional budget shared by all entities created under this profile",
+      "type": "number",
+      "minimum": 1
+    },
+    "timezone": {
+      "description": "The tz database time zone used for all date-based campaign management and reporting.",
+      "type": "string"
+    },
+    "accountInfo": {
+      "type": "object",
+      "properties": {
+        "marketplaceStringId": {
+          "description": "The string identifier for the marketplace associated with this profile. This is the same identifier used by MWS",
+          "type": "string"
+        },
+        "id": {
+          "description": "The string identifier for the ID associated with this account",
+          "type": "string"
+        },
+        "name": {
+          "description": "The string identifier for the account name",
+          "type": "string"
+        },
+        "type": {
+          "description": "The type of account being called",
+          "type": "string",
+          "oneOf": ["seller", "vendor"]
+        }
+      }
+    }
+  }
+}
