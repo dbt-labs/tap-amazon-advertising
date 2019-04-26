@@ -6,7 +6,6 @@ import singer.metrics
 import time
 import datetime
 
-from tap_amazon_advertising.config import get_config_start_date
 from tap_amazon_advertising.state import incorporate, save_state, \
     get_last_record_value_for_table
 
@@ -120,7 +119,7 @@ class ReportStream(BaseStream):
         LOGGER.info('Syncing data for entity {}'.format(table))
 
         today = datetime.date.today()
-        looback = datetime.timedelta(days=0)
+        looback = datetime.timedelta(days=self.config.get('sync_lookback', 30))
 
         sync_date = today - looback
         while sync_date <= today:
