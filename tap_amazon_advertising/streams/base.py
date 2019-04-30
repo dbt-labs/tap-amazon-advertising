@@ -99,7 +99,7 @@ class ReportStream(BaseStream):
         LOGGER.info("Polling")
         report_url = '{}/v2/reports/{}'.format(BASE_URL, report_id)
 
-        num_polls = 10
+        num_polls = 12
         for i in range(num_polls):
             poll = self.client.make_request(report_url, 'GET')
             status = poll['status']

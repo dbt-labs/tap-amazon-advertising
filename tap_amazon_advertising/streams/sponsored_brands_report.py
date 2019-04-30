@@ -63,3 +63,21 @@ class SponsoredBrandsReportKeywordsStream(BaseSponsoredBrandsReportStream):
     @property
     def recordType(self):
         return "keywords"
+
+
+class SponsoredBrandsReportAdGroupsStream(BaseSponsoredBrandsReportStream):
+    TABLE = 'sponsored_brands_report_ad_groups'
+    KEY_PROPERTIES = ['adGroupId', 'day']
+
+    @property
+    def recordType(self):
+        return "adGroups"
+
+
+class SponsoredBrandsReportCampaignsStream(BaseSponsoredBrandsReportStream):
+    TABLE = 'sponsored_brands_report_campaigns'
+    KEY_PROPERTIES = ['campaignId', 'day']
+
+    @property
+    def recordType(self):
+        return "campaigns"
