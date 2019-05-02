@@ -6,6 +6,7 @@ import singer.metrics
 import time
 import datetime
 
+from tap_amazon_advertising.config import get_config_start_date
 from tap_amazon_advertising.state import incorporate, save_state, \
     get_last_record_value_for_table
 
@@ -96,10 +97,13 @@ class ReportStream(BaseStream):
         report = self.client.make_request(url, 'POST', body=body)
         report_id = report['reportId']
 
+        # If we don't sleep here, then something funky happens and the API
+        # takes _significantly_ longer to return a SUCCESS status
+        time.sleep(10)
         LOGGER.info("Polling")
         report_url = '{}/v2/reports/{}'.format(BASE_URL, report_id)
 
-        num_polls = 12
+        num_polls = 7
         for i in range(num_polls):
             poll = self.client.make_request(report_url, 'GET')
             status = poll['status']
@@ -109,22 +113,27 @@ class ReportStream(BaseStream):
                 return poll['location']
             else:
                 timeout = (1 + i) ** 2
-                LOGGER.info("Sleeping for {} seconds".format(timeout))
+                LOGGER.info("In state: {}, Sleeping for {} seconds".format(status, timeout))
                 time.sleep(timeout)
 
-        raise RuntimeError("Could not fetch report for day {} from url {}".format(day, url))
+        LOGGER.info("Unable to sync from {} for day {}-- moving on".format(url, day))
 
     def sync_data(self):
         table = self.TABLE
         LOGGER.info('Syncing data for entity {}'.format(table))
 
-        today = datetime.date.today()
-        looback = datetime.timedelta(days=self.config.get('sync_lookback', 30))
+        yesterday = datetime.date.today() - datetime.timedelta(days=1)
 
-        sync_date = today - looback
-        while sync_date <= today:
+        sync_date = get_last_record_value_for_table(self.state, table)
+        if sync_date is None:
+            sync_date = get_config_start_date(self.config)
+
+        while sync_date <= yesterday:
             url = self.get_url(self.api_path)
             report_url = self.create_report(url, sync_date)
+
+            if report_url is None:
+                break
 
             result = self.client.download_gzip(report_url)
             data = self.get_stream_data(result, sync_date)
@@ -136,6 +145,11 @@ class ReportStream(BaseStream):
                         [obj])
 
                     counter.increment()
+
+
+            self.state = incorporate(self.state, self.TABLE,
+                                     'last_record', sync_date.isoformat())
+            save_state(self.state)
 
             sync_date += datetime.timedelta(days=1)
 

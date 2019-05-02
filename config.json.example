@@ -1,9 +1,9 @@
 {
-    "app_key": "",
-    "app_secret": "",
-    "access_token": "",
-    "access_token_secret": "",
-    "account_id": 0,
-    "start_date": "2008-01-01T00:00:00Z",
-    "user_agent": "tap-liveperson <your-email@domain.com>"
+    "client_id": "",
+    "client_secret": "",
+    "refresh_token": "",
+    "redirect_uri": "",
+    "profile_id": "",
+    "start_date": "2019-04-01",
+    "user_agent": "tap-amazon-advertising <user@email.com>"
 }

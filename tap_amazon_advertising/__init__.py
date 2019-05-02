@@ -18,7 +18,7 @@ class AmazonAdvertisingRunner(tap_framework.Runner):
 def main():
     args = singer.utils.parse_args(
         required_config_keys=['client_id', 'client_secret', 'refresh_token',
-                              'redirect_uri', 'profile_id'])
+                              'redirect_uri', 'profile_id', 'start_date'])
 
     client = AmazonAdvertisingClient(args.config)
     runner = AmazonAdvertisingRunner(

@@ -1,4 +1,4 @@
-# tap-liveperson
+# tap-amazon-advertising
 
 Author: Drew Banin (drew@fishtownanalytics.com)
 
@@ -8,7 +8,18 @@ It:
 
 - Generates a catalog of available data in the Amazon Advertising API
 - Extracts the following resources:
-    TODO
+    - portfolios
+    - profiles
+    - ad groups
+    - ad groups: biddable keywords
+    - ad groups: negative keywords
+    - campaigns:
+    - campaigns: negative keywords
+    - product ads
+    - sponsored products report: product ads
+    - sponsored brands report: ad groups
+    - sponsored brands report: campaigns
+    - sponsored brands report: keywords
 
 ### Quick Start
 
@@ -22,7 +33,8 @@ pip install .
 
 2. Get credentials from Amazon
 
-- TODO
+In addition to a client id and secret, you'll also need to obtain a refresh token for an authorized amazon advertising user. This can be accomplished by
+running the `get_refresh_token.py` script located in the root of this repository.
 
 3. Create the config file.
 
@@ -41,7 +53,7 @@ Step 4 a file called `catalog.json` that specifies all the available endpoints a
 6. Run it!
 
 ```bash
-tap-amazon-advertising -c config.json --properties catalog.json
+tap-amazon-advertising -c config.json --catalog catalog.json
 ```
 
 Copyright &copy; 2019 Fishtown Analytics
