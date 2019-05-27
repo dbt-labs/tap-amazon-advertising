@@ -9,7 +9,7 @@ LOGGER = singer.get_logger()  # noqa
 class CampaignNegativeKeywordsStream(PaginatedStream):
     API_METHOD = 'GET'
     TABLE = 'campaign_negative_keywords'
-    KEY_PROPERTIES = ['keywordId']
+    KEY_PROPERTIES = ['profileId', 'keywordId']
 
     @property
     def api_path(self):

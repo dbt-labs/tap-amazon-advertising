@@ -9,7 +9,7 @@ LOGGER = singer.get_logger()  # noqa
 class BiddableKeywordsStream(PaginatedStream):
     API_METHOD = 'GET'
     TABLE = 'ad_group_biddable_keywords'
-    KEY_PROPERTIES = ['keywordId']
+    KEY_PROPERTIES = ['profileId', 'keywordId']
 
     @property
     def api_path(self):

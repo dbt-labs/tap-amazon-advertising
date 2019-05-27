@@ -11,3 +11,4 @@ env/
 logs/
 run.sh
 debug/
+stitch/

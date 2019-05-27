@@ -9,7 +9,7 @@ LOGGER = singer.get_logger()  # noqa
 class PortfoliosStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'portfolios'
-    KEY_PROPERTIES = ['portfolioId']
+    KEY_PROPERTIES = ['profileId', 'portfolioId']
 
     @property
     def api_path(self):

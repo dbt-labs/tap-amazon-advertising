@@ -28,6 +28,13 @@ class BaseStream(base):
     def get_url(self, path):
         return '{}{}'.format(BASE_URL, path)
 
+    def transform_record(self, record, inject_profile=True):
+        if inject_profile:
+            record['profileId'] = self.config.get('profile_id')
+        transformed = base.transform_record(self, record)
+
+        return transformed
+
     def sync_data(self):
         table = self.TABLE
         LOGGER.info('Syncing data for entity {}'.format(table))
@@ -128,7 +135,12 @@ class ReportStream(BaseStream):
         if sync_date is None:
             sync_date = get_config_start_date(self.config)
 
+        # Add a lookback to refresh attribution metrics for more recent orders
+        sync_date -= datetime.timedelta(days=self.config.get('lookback', 30))
+
         while sync_date <= yesterday:
+            LOGGER.info("Syncing {} for date {}".format(table, sync_date))
+
             url = self.get_url(self.api_path)
             report_url = self.create_report(url, sync_date)
 

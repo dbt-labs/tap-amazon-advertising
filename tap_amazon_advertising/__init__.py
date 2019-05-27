@@ -21,6 +21,7 @@ def main():
                               'redirect_uri', 'profile_id', 'start_date'])
 
     client = AmazonAdvertisingClient(args.config)
+
     runner = AmazonAdvertisingRunner(
         args, client, AVAILABLE_STREAMS)
 

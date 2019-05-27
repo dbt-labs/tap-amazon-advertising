@@ -31,7 +31,7 @@ class BaseSponsoredBrandsReportStream(ReportStream):
 
 class SponsoredBrandsReportKeywordsStream(BaseSponsoredBrandsReportStream):
     TABLE = 'sponsored_brands_report_keywords'
-    KEY_PROPERTIES = ['keywordId', 'day']
+    KEY_PROPERTIES = ['keywordId', 'day', 'profileId']
 
     def get_body(self, day):
         return {
@@ -71,7 +71,7 @@ class SponsoredBrandsReportKeywordsStream(BaseSponsoredBrandsReportStream):
 
 class SponsoredBrandsReportAdGroupsStream(BaseSponsoredBrandsReportStream):
     TABLE = 'sponsored_brands_report_ad_groups'
-    KEY_PROPERTIES = ['adGroupId', 'day']
+    KEY_PROPERTIES = ['adGroupId', 'day', 'profileId']
 
     @property
     def recordType(self):
@@ -109,7 +109,7 @@ class SponsoredBrandsReportAdGroupsStream(BaseSponsoredBrandsReportStream):
 
 class SponsoredBrandsReportCampaignsStream(BaseSponsoredBrandsReportStream):
     TABLE = 'sponsored_brands_report_campaigns'
-    KEY_PROPERTIES = ['campaignId', 'day']
+    KEY_PROPERTIES = ['campaignId', 'day', 'profileId']
 
     def get_body(self, day):
         return {

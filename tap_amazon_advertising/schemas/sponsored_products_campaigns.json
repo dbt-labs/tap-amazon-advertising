@@ -2,6 +2,10 @@
     "title": "CampaignEx",
     "type": "object",
     "properties": {
+        "profileId": {
+            "description": "The ID of the profile",
+            "type": "integer"
+        },
         "portfolioId": {
             "description": "The ID of the portfolio",
             "type": "integer"

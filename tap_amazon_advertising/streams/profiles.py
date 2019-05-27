@@ -17,6 +17,6 @@ class ProfilesStream(BaseStream):
 
     def get_stream_data(self, result):
         return [
-            self.transform_record(record)
+            self.transform_record(record, False)
             for record in result
         ]

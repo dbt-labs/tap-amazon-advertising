@@ -9,6 +9,15 @@
             "type": "string",
             "format": "date-time"
         },
+        "keywordId": {
+            "type": ["null", "string"]
+        },
+        "keywordText": {
+            "type": ["null", "string"]
+        },
+        "matchType": {
+            "type": ["null", "string"]
+        },
         "adId": {
             "type": ["null", "string"]
         },

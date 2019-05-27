@@ -18,6 +18,21 @@
         "campaignId": {
             "type": ["null", "string"]
         },
+        "campaignStatus": {
+            "type": ["null", "string"]
+        },
+        "campaignBudget": {
+            "type": ["null", "number"]
+        },
+        "bidPlus": {
+            "type": ["null", "string"]
+        },
+        "portfolioId": {
+            "type": ["null", "string"]
+        },
+        "portfolioName": {
+            "type": ["null", "string"]
+        },
         "asin": {
             "type": ["null", "string"]
         },

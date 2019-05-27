@@ -2,6 +2,10 @@
     "title": "CampaignNegativeKeywordEx",
     "type": "object",
     "properties": {
+        "profileId": {
+            "description": "The ID of the profile",
+            "type": "integer"
+        },
         "keywordId": {
             "description": "The ID of the keyword",
             "type": "integer"

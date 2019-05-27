@@ -6,14 +6,14 @@ import json
 LOGGER = singer.get_logger()  # noqa
 
 
-class AdGroupsStream(PaginatedStream):
+class SponsoredProductsCampaignsStream(PaginatedStream):
     API_METHOD = 'GET'
-    TABLE = 'ad_groups'
-    KEY_PROPERTIES = ['profileId', 'adGroupId']
+    TABLE = 'sponsored_products_campaigns'
+    KEY_PROPERTIES = ['campaignId', 'profileId']
 
     @property
     def api_path(self):
-        return '/v2/sp/adGroups/extended'
+        return '/v2/sp/campaigns/extended'
 
     def get_stream_data(self, result):
         return [

@@ -9,7 +9,7 @@ LOGGER = singer.get_logger()  # noqa
 class ProductAdsStream(PaginatedStream):
     API_METHOD = 'GET'
     TABLE = 'product_ads'
-    KEY_PROPERTIES = ['adId']
+    KEY_PROPERTIES = ['profileId', 'adId']
 
     @property
     def api_path(self):
