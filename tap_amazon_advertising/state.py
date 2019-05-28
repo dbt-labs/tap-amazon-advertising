@@ -14,7 +14,7 @@ def get_last_record_value_for_table(state, table):
     if last_value is None:
         return None
 
-    return parse(last_value)
+    return parse(last_value).date()
 
 
 def incorporate(state, table, field, value):
