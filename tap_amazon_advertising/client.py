@@ -51,7 +51,7 @@ class AmazonAdvertisingClient:
             json=body)
 
         LOGGER.info("Received code: {}".format(response.status_code))
-        if attempts < self.MAX_TRIES and response.status_code == 429:
+        if attempts < self.MAX_TRIES and response.status_code in [429, 502]:
             LOGGER.info("Received rate limit response, sleeping: {}".format(response.text))
             time.sleep(30)
             return self._make_request(url, method, params, body, attempts+1)
