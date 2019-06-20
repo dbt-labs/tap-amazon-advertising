@@ -12,6 +12,7 @@ LOGGER = singer.get_logger()  # noqa
 TOKEN_URL = 'https://api.amazon.com/auth/o2/token'
 SCOPES = ["cpc_advertising:campaign_management"]
 
+
 class AmazonAdvertisingClient:
 
     MAX_TRIES = 5
@@ -51,9 +52,16 @@ class AmazonAdvertisingClient:
             json=body)
 
         LOGGER.info("Received code: {}".format(response.status_code))
-        if attempts < self.MAX_TRIES and response.status_code in [429, 502]:
-            LOGGER.info("Received rate limit response, sleeping: {}".format(response.text))
-            time.sleep(30)
+
+        if attempts < self.MAX_TRIES and response.status_code in [429, 502, 401]:
+            if response.status_code == 401:
+                LOGGER.info("Received unauthorized error code, retrying: {}".format(response.text))
+                self.access_token = self.get_authorization()
+
+            else:
+                LOGGER.info("Received rate limit response, sleeping: {}".format(response.text))
+                time.sleep(30)
+
             return self._make_request(url, method, params, body, attempts+1)
 
         if response.status_code not in [200, 201, 202]:
