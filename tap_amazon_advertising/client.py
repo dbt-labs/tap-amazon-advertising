@@ -73,7 +73,18 @@ class AmazonAdvertisingClient:
         return self._make_request(url, method, params, body).json()
 
     def download_gzip(self, url):
-        resp = self._make_request(url, 'GET')
+        resp = None
+        attempts = 3
+        for i in range(attempts + 1):
+            try:
+                resp = self._make_request(url, 'GET')
+                break
+            except ConnectionError as e:
+                LOGGER.info("Caught error while downloading gzip, sleeping: {}".format(e))
+                time.sleep(10)
+        else:
+            raise RuntimeError("Unable to sync gzip after {} attempts".format(attempts))
+
         return self.unzip(resp.content)
 
     @classmethod
