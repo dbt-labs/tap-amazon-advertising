@@ -106,7 +106,7 @@ class ReportStream(BaseStream):
 
         # If we don't sleep here, then something funky happens and the API
         # takes _significantly_ longer to return a SUCCESS status
-        time.sleep(10)
+        time.sleep(3)
         LOGGER.info("Polling")
         report_url = '{}/v2/reports/{}'.format(BASE_URL, report_id)
 
