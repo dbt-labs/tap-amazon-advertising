@@ -136,7 +136,9 @@ class ReportStream(BaseStream):
             sync_date = get_config_start_date(self.config)
 
         # Add a lookback to refresh attribution metrics for more recent orders
-        sync_date -= datetime.timedelta(days=self.config.get('lookback', 30))
+        # Removed as Amazon API does not allow to get data older than 60 days
+        # and it's using another value for start_date
+        #sync_date -= datetime.timedelta(days=self.config.get('lookback', 30))
 
         while sync_date <= yesterday:
             LOGGER.info("Syncing {} for date {}".format(table, sync_date))
