@@ -16,6 +16,7 @@ LOGGER = singer.get_logger()
 
 BASE_URL = 'https://advertising-api.amazon.com'
 
+
 class BaseStream(base):
     KEY_PROPERTIES = ['id']
 
@@ -55,6 +56,7 @@ class BaseStream(base):
 
                 counter.increment()
         return self.state
+
 
 class PaginatedStream(BaseStream):
     def get_params(self, index, count):
@@ -110,20 +112,21 @@ class ReportStream(BaseStream):
         LOGGER.info("Polling")
         report_url = '{}/v2/reports/{}'.format(BASE_URL, report_id)
 
-        num_polls = 7
+        num_polls = 99
         for i in range(num_polls):
             poll = self.client.make_request(report_url, 'GET')
             status = poll['status']
-            LOGGER.info("Poll {} of {}, status={}".format(i+1, num_polls, status))
+            LOGGER.info("Poll {} of {}, status={}".format(i + 1, num_polls, status))
 
             if status == 'SUCCESS':
                 return poll['location']
-            else:
-                timeout = (1 + i) ** 2
+            elif status == "IN_PROGRESS":
+                timeout = (1 + i) * 5
                 LOGGER.info("In state: {}, Sleeping for {} seconds".format(status, timeout))
                 time.sleep(timeout)
-
-        LOGGER.info("Unable to sync from {} for day {}-- moving on".format(url, day))
+            else:
+                LOGGER.info("In state: {}, Unable to sync from {} for day {}-- moving on".format(status, url, day))
+                exit(1)
 
     def sync_data(self):
         table = self.TABLE
@@ -135,10 +138,9 @@ class ReportStream(BaseStream):
         if sync_date is None:
             sync_date = get_config_start_date(self.config)
 
-        # Add a lookback to refresh attribution metrics for more recent orders
-        # Removed as Amazon API does not allow to get data older than 60 days
-        # and it's using another value for start_date
-        #sync_date -= datetime.timedelta(days=self.config.get('lookback', 30))
+        date_60_days_ago = datetime.date.today() - datetime.timedelta(days=60)
+        if sync_date < date_60_days_ago:
+            sync_date = date_60_days_ago
 
         while sync_date <= yesterday:
             LOGGER.info("Syncing {} for date {}".format(table, sync_date))
@@ -160,11 +162,8 @@ class ReportStream(BaseStream):
 
                     counter.increment()
 
-
+            sync_date += datetime.timedelta(days=1)
             self.state = incorporate(self.state, self.TABLE,
                                      'last_record', sync_date.isoformat())
             save_state(self.state)
-
-            sync_date += datetime.timedelta(days=1)
-
         return self.state

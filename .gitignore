@@ -12,3 +12,5 @@ logs/
 run.sh
 debug/
 stitch/
+venv
+.idea
