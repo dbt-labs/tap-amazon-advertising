@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import json
+import sys
 
 import singer
 
@@ -14,6 +16,32 @@ class AmazonAdvertisingRunner(tap_framework.Runner):
     pass
 
 
+def do_discover(args):
+    LOGGER.info("Starting discovery.")
+
+    catalog = []
+    report_streams = [
+        "sponsored_products_report_product_ads",
+        "sponsored_products_report_campaigns",
+        "sponsored_products_report_ad_groups",
+        "sponsored_products_report_keywords",
+        "sponsored_brands_report_keywords",
+        "sponsored_brands_report_campaigns",
+        "sponsored_brands_report_ad_groups",
+    ]
+
+    for available_stream in AVAILABLE_STREAMS:
+        stream = available_stream(args.config, args.state, None, None)
+
+        schemas = stream.generate_catalog()
+        for schema in schemas:
+            if schema["tap_stream_id"] in report_streams:
+                schema['replication_method'] = "INCREMENTAL"
+        catalog += schemas
+
+    json.dump({'streams': catalog}, sys.stdout, indent=4)
+
+
 @singer.utils.handle_top_exception(LOGGER)
 def main():
     args = singer.utils.parse_args(
@@ -26,7 +54,7 @@ def main():
         args, client, AVAILABLE_STREAMS)
 
     if args.discover:
-        runner.do_discover()
+        do_discover(args)
     else:
         runner.do_sync()
 
