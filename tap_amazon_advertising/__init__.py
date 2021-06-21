@@ -5,6 +5,7 @@ import sys
 import singer
 
 import tap_framework
+from singer import metadata
 
 from tap_amazon_advertising.client import AmazonAdvertisingClient
 from tap_amazon_advertising.streams import AVAILABLE_STREAMS
@@ -37,6 +38,13 @@ def do_discover(args):
         for schema in schemas:
             if schema["tap_stream_id"] in report_streams:
                 schema['replication_method'] = "INCREMENTAL"
+                schema['replication_key'] = "day"
+                mdata = schema["metadata"]
+                mdata = metadata.to_map(mdata)
+                metadata.write(mdata, (), "table-key-properties", schema["key_properties"])
+                metadata.write(mdata, (), "forced-replication-method", "INCREMENTAL")
+                metadata.write(mdata, (), "valid-replication-keys", ["day"])
+                schema['metadata'] = metadata.to_list(mdata)
         catalog += schemas
 
     json.dump({'streams': catalog}, sys.stdout, indent=4)
