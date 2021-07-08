@@ -5,5 +5,6 @@
     "redirect_uri": "",
     "profile_id": "",
     "start_date": "2019-04-01",
-    "user_agent": "tap-amazon-advertising <user@email.com>"
+    "user_agent": "tap-amazon-advertising <user@email.com>",
+    "base_url": "https://advertising-api.amazon.com"
 }

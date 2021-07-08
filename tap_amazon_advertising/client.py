@@ -10,7 +10,7 @@ import time
 LOGGER = singer.get_logger()  # noqa
 
 TOKEN_URL = 'https://api.amazon.com/auth/o2/token'
-SCOPES = ["cpc_advertising:campaign_management"]
+SCOPES = ["advertising::campaign_management"]
 
 
 class AmazonAdvertisingClient:

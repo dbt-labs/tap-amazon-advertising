@@ -39,7 +39,7 @@ running the `get_refresh_token.py` script located in the root of this repository
 3. Create the config file.
 
 There is a template you can use at `config.json.example`, just copy it to `config.json` in the repo root and insert your credentials.
-
+For the base url see: https://advertising.amazon.com/API/docs/en-us/get-started/how-to-use-api
 4. Run the application to generate a catalog.
 
 ```bash

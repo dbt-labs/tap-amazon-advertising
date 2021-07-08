@@ -54,7 +54,7 @@ def do_discover(args):
 def main():
     args = singer.utils.parse_args(
         required_config_keys=['client_id', 'client_secret', 'refresh_token',
-                              'redirect_uri', 'profile_id', 'start_date'])
+                              'redirect_uri', 'profile_id', 'start_date', 'base_url'])
 
     client = AmazonAdvertisingClient(args.config)
 

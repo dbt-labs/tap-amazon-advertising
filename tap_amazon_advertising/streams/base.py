@@ -14,8 +14,6 @@ from tap_framework.streams import BaseStream as base
 
 LOGGER = singer.get_logger()
 
-BASE_URL = 'https://advertising-api.amazon.com'
-
 
 class BaseStream(base):
     KEY_PROPERTIES = ['id']
@@ -27,7 +25,7 @@ class BaseStream(base):
         return {}
 
     def get_url(self, path):
-        return '{}{}'.format(BASE_URL, path)
+        return '{}{}'.format(self.config["base_url"], path)
 
     def transform_record(self, record, inject_profile=True):
         if inject_profile:
@@ -110,7 +108,7 @@ class ReportStream(BaseStream):
         # takes _significantly_ longer to return a SUCCESS status
         time.sleep(3)
         LOGGER.info("Polling")
-        report_url = '{}/v2/reports/{}'.format(BASE_URL, report_id)
+        report_url = '{}/v2/reports/{}'.format(self.config["base_url"], report_id)
 
         num_polls = 99
         for i in range(num_polls):
