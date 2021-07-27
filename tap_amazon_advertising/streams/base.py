@@ -130,17 +130,17 @@ class ReportStream(BaseStream):
         table = self.TABLE
         LOGGER.info('Syncing data for entity {}'.format(table))
 
-        yesterday = datetime.date.today() - datetime.timedelta(days=1)
+        today = datetime.date.today()
 
         sync_date = get_last_record_value_for_table(self.state, table)
         if sync_date is None:
             sync_date = get_config_start_date(self.config)
-
+        sync_date = sync_date - datetime.timedelta(days=14)  # start incremental from the last 14 days
         date_60_days_ago = datetime.date.today() - datetime.timedelta(days=60)
         if sync_date < date_60_days_ago:
             sync_date = date_60_days_ago
 
-        while sync_date <= yesterday:
+        while sync_date <= today:
             LOGGER.info("Syncing {} for date {}".format(table, sync_date))
 
             url = self.get_url(self.api_path)
