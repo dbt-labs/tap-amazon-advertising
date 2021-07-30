@@ -43,7 +43,7 @@
             "type": ["null", "string"]
         },
         "campaignBudget": {
-            "type": ["null", "string"]
+            "type": ["null", "number"]
         },
         "campaignBudgetType": {
             "type": ["null", "string"]
