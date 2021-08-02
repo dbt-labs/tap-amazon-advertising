@@ -136,9 +136,10 @@ class ReportStream(BaseStream):
         if sync_date is None:
             sync_date = get_config_start_date(self.config)
         sync_date = sync_date - datetime.timedelta(days=14)  # start incremental from the last 14 days
-        date_60_days_ago = datetime.date.today() - datetime.timedelta(days=60)
-        if sync_date < date_60_days_ago:
-            sync_date = date_60_days_ago
+        # allowed date window for reports is 60 days before now, we will change it to 59 days to leave room for timezone changes
+        date_59_days_ago = datetime.date.today() - datetime.timedelta(days=59)
+        if sync_date < date_59_days_ago:
+            sync_date = date_59_days_ago
 
         while sync_date <= today:
             LOGGER.info("Syncing {} for date {}".format(table, sync_date))
