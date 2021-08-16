@@ -22,7 +22,7 @@ class BaseStream(base):
         return {}
 
     def get_body(self):
-        return {}
+        return None
 
     def get_url(self, path):
         return '{}{}'.format(self.config["base_url"], path)
