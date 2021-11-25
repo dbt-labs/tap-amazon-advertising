@@ -6,6 +6,10 @@
             "description": "The ID of the profile",
             "type": "integer"
         },
+        "countryCode": {
+            "description": "The country code of the profile",
+            "type": "string"
+        },
         "keywordId": {
             "description": "The ID of the keyword",
             "type": "integer"

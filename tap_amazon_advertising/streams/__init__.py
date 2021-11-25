@@ -1,6 +1,6 @@
 
-from tap_amazon_advertising.streams.profiles import ProfilesStream
 from tap_amazon_advertising.streams.portfolios import PortfoliosStream
+from tap_amazon_advertising.streams.sponsored_display_campaigns import SponsoredDisplayCampaignsStream
 from tap_amazon_advertising.streams.sponsored_products_campaigns import SponsoredProductsCampaignsStream
 from tap_amazon_advertising.streams.sponsored_brands_campaigns import SponsoredBrandsCampaignsStream
 from tap_amazon_advertising.streams.ad_groups import AdGroupsStream
@@ -8,6 +8,10 @@ from tap_amazon_advertising.streams.biddable_keywords import BiddableKeywordsStr
 from tap_amazon_advertising.streams.negative_keywords import NegativeKeywordsStream
 from tap_amazon_advertising.streams.campaign_negative_keywords import CampaignNegativeKeywordsStream
 from tap_amazon_advertising.streams.product_ads import ProductAdsStream
+
+from tap_amazon_advertising.streams.sponsored_display_report import SponsoredDisplayReportProductAdsStream, \
+        SponsoredDisplayReportCampaignsStream, \
+        SponsoredDisplayReportAdGroupsStream
 
 from tap_amazon_advertising.streams.sponsored_products_report import SponsoredProductsReportProductAdsStream, \
         SponsoredProductsReportCampaignsStream, \
@@ -20,15 +24,20 @@ from tap_amazon_advertising.streams.sponsored_brands_report import SponsoredBran
 
 
 AVAILABLE_STREAMS = [
-    ProfilesStream,
     PortfoliosStream,
+    SponsoredDisplayCampaignsStream,
     SponsoredProductsCampaignsStream,
-    SponsoredBrandsCampaignsStream,
+    # SponsoredBrandsCampaignsStream,
     AdGroupsStream,
     BiddableKeywordsStream,
     NegativeKeywordsStream,
     CampaignNegativeKeywordsStream,
     ProductAdsStream,
+
+    # SD Reports
+    SponsoredDisplayReportProductAdsStream,
+    SponsoredDisplayReportCampaignsStream,
+    SponsoredDisplayReportAdGroupsStream,
 
     # SP Reports
     SponsoredProductsReportProductAdsStream,
@@ -37,13 +46,12 @@ AVAILABLE_STREAMS = [
     SponsoredProductsReportKeywordsStream,
 
     # SB Reports
-    SponsoredBrandsReportKeywordsStream,
-    SponsoredBrandsReportCampaignsStream,
-    SponsoredBrandsReportAdGroupsStream,
+    # SponsoredBrandsReportKeywordsStream,
+    # SponsoredBrandsReportCampaignsStream,
+    # SponsoredBrandsReportAdGroupsStream,
 ]
 
 __all__ = [
-    'ProfilesStream',
     'PortfoliosStream',
     'SponsoredProductsCampaignsStream',
     'SponsoredBrandsCampaignsStream',
@@ -52,6 +60,10 @@ __all__ = [
     'NegativeKeywordsStream',
     'CampaignNegativeKeywordsStream',
     'ProductAdsStream',
+
+    'SponsoredDisplayReportProductAdsStream',
+    'SponsoredDisplayReportCampaignsStream',
+    'SponsoredDisplayReportAdGroupsStream',
 
     'SponsoredProductsReportProductAdsStream',
     'SponsoredProductsReportCampaignsStream',

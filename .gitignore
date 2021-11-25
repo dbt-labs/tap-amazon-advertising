@@ -12,3 +12,11 @@ logs/
 run.sh
 debug/
 stitch/
+build/
+venv
+.env
+
+# custom stuff
+.autoenv.zsh
+.autoenv_leave.zsh
+output.txt

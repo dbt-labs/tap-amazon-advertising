@@ -10,7 +10,7 @@ import time
 LOGGER = singer.get_logger()  # noqa
 
 TOKEN_URL = 'https://api.amazon.com/auth/o2/token'
-SCOPES = ["cpc_advertising:campaign_management"]
+SCOPES = ["advertising:campaign_management"]
 
 
 class AmazonAdvertisingClient:
@@ -20,8 +20,13 @@ class AmazonAdvertisingClient:
     def __init__(self, config):
         self.config = config
         self.access_token = self.get_authorization()
+        self.profile_id = None
+
+    def set_profile_id(self, profile_id):
+        self.profile_id = profile_id
 
     def get_authorization(self):
+        #return 'Atza|IwEBIGscxiYf1OO9l4mRQEY1UPOH5fnRUroEQwRBmCSS7GP9rs2a90KsQDz1DVJIKtXhvdBottH1eybpnW6UgLXK8A7WVk2gXzNlXRUmHCJ8Py36m2Qbtcw3kYzjmrr89AUdspeZAtiFEtU9CyHZKBZ-YFZCIPfxj1BhdElyqy_2iIzL-mUKqAZPlM1WWH93hpkSLkzNGKPbN3WZR9h3jjJgqjHumWGtOA_7qEyJLmAbJ8jH0taQEArGWvNfL-b3rcSDDwn0kMUaeZRKJgxURghGjdv6vXNy-N-imYcHoZv5vs1aGkOC4ETZP2J7VJpphSPDhMmGjOQL72xJv0-UOpHVoLvadqPjlYhLLf6Vgja1p873ovrk01LTc8kU7w-fkHunusfkL7AjoNTGL9-s9jhDTwrItL56hNYR-6RJ7D5B3UqZ0NSH0a58SknYveEJTi21p_i_frvonPUxZ3HUUdosoLm-pR43XE97z9BUynrFBMQmyA'
         client_id = self.config.get('client_id')
         oauth = requests_oauthlib.OAuth2Session(
                     client_id,
@@ -37,19 +42,27 @@ class AmazonAdvertisingClient:
         return tokens['access_token']
 
     def _make_request(self, url, method, params=None, body=None, attempts=0):
+        if not self.profile_id:
+            raise RuntimeError("Client profile_id is None!")
+
         LOGGER.info("Making {} request to {} ({})".format(method, url, params))
+
+        kwargs = {
+            'headers': {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer {}'.format(self.access_token),
+                'Amazon-Advertising-API-ClientId': self.config.get('client_id'),
+                'Amazon-Advertising-API-Scope': self.profile_id,
+            },
+            'params': params,
+        }
+        if body:
+            kwargs['json'] = body
 
         response = requests.request(
             method,
             url,
-            headers={
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer {}'.format(self.access_token),
-                'Amazon-Advertising-API-ClientId': self.config.get('client_id'),
-                'Amazon-Advertising-API-Scope': self.config.get('profile_id'),
-            },
-            params=params,
-            json=body)
+            **kwargs)
 
         LOGGER.info("Received code: {}".format(response.status_code))
 

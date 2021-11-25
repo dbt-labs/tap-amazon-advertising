@@ -1,9 +1,17 @@
 {
-    "client_id": "",
-    "client_secret": "",
-    "refresh_token": "",
-    "redirect_uri": "",
-    "profile_id": "",
-    "start_date": "2019-04-01",
-    "user_agent": "tap-amazon-advertising <user@email.com>"
+  "client_id": "amzn1.application-oa2-client.db2794d967b94b1dbf43b1fa2f1c32b3",
+  "client_secret": "env[AMAZON_ADVERTISING_CLIENT_SECRET]",
+  "refresh_token": "env[AMAZON_ADVERTISING_OAUTH_REFRESH_TOKEN]",
+  "redirect_uri": "https://api.vibe.us/v1/null",
+  "start_date": "2021-01-01",
+  "profiles": [{
+    "profile_id": "3615252120195397",
+    "country_code": "CA"
+  }, {
+    "profile_id": "3272306995883437",
+    "country_code": "MX"
+  }, {
+    "profile_id": "109904696947488",
+    "country_code": "US"
+  }]
 }

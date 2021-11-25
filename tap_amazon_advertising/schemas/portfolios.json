@@ -6,6 +6,10 @@
             "description": "The ID of the profile",
             "type": "integer"
         },
+        "countryCode": {
+            "description": "The country code of the profile",
+            "type": "string"
+        },
         "portfolioId": {
             "description": "The ID of the portfolio.",
             "type": "integer"
@@ -56,11 +60,11 @@
             "type": "integer"
         },
         "lastUpdatedDate": {
-            "description": "The date the portfolio was last updated.", 
+            "description": "The date the portfolio was last updated.",
             "type": "integer"
         },
         "servingStatus": {
-            "description": "The serving status of the portfolio.", 
+            "description": "The serving status of the portfolio.",
             "type": "string"
         }
     }

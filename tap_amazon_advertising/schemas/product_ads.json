@@ -6,6 +6,10 @@
             "description": "The ID of the profile",
             "type": "integer"
         },
+        "countryCode": {
+            "description": "The country code of the profile",
+            "type": "string"
+        },
         "adId": {
             "description": "The ID of the product ad",
             "type": "integer"

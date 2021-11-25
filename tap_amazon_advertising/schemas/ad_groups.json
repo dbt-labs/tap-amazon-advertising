@@ -6,39 +6,43 @@
             "description": "The ID of the profile",
             "type": "integer"
         },
-       "adGroupId": {
-           "description": "The ID of the ad group",
-           "type": "integer"
-       },
-       "name": {
-           "description": "The name of the ad group",
-           "type": "string"
-       },
-       "campaignId": {
-           "description": "The ID of the campaign to which this ad group belongs",
-           "type": "integer"
-       },
-       "defaultBid": {
-           "description": "The bid used when keywords belonging to this ad group don't specify a bid. For vendors this property is automatically set and any value entered will be ignored",
-           "type": "number"
-       },
-       "state": {
-           "description": "Advertiser-specified state of the ad group",
-           "type": "string",
-           "oneOf": ["enabled", "paused", "archived"]
-       },
-       "creationDate": {
-           "description": "The date the ad group was created as epoch time in milliseconds",
-           "type": "integer"
-       },
-       "lastUpdatedDate": {
-           "description": "The date the ad group was last updated as epoch time in milliseconds",
-           "type": "integer"
-       },
-       "servingStatus": {
-           "description": "The computed status, accounting for out of budget, policy violations, etc. See Developer notes for more information.",
-           "type": "string",
-           "oneOf": ["AD_GROUP_ARCHIVED", "AD_GROUP_PAUSED", "AD_GROUP_STATUS_ENABLED", "AD_POLICING_SUSPENDED", "CAMPAIGN_OUT_OF_BUDGET", "CAMPAIGN_PAUSED", "CAMPAIGN_ARCHIVED", "CAMPAIGN_INCOMPLETE", "ACCOUNT_OUT_OF_BUDGET"]
-       }
+        "countryCode": {
+            "description": "The country code of the profile",
+            "type": "string"
+        },
+        "adGroupId": {
+            "description": "The ID of the ad group",
+            "type": "integer"
+        },
+        "name": {
+            "description": "The name of the ad group",
+            "type": "string"
+        },
+        "campaignId": {
+            "description": "The ID of the campaign to which this ad group belongs",
+            "type": "integer"
+        },
+        "defaultBid": {
+            "description": "The bid used when keywords belonging to this ad group don't specify a bid. For vendors this property is automatically set and any value entered will be ignored",
+            "type": "number"
+        },
+        "state": {
+            "description": "Advertiser-specified state of the ad group",
+            "type": "string",
+            "oneOf": ["enabled", "paused", "archived"]
+        },
+        "creationDate": {
+            "description": "The date the ad group was created as epoch time in milliseconds",
+            "type": "integer"
+        },
+        "lastUpdatedDate": {
+            "description": "The date the ad group was last updated as epoch time in milliseconds",
+            "type": "integer"
+        },
+        "servingStatus": {
+            "description": "The computed status, accounting for out of budget, policy violations, etc. See Developer notes for more information.",
+            "type": "string",
+            "oneOf": ["AD_GROUP_ARCHIVED", "AD_GROUP_PAUSED", "AD_GROUP_STATUS_ENABLED", "AD_POLICING_SUSPENDED", "CAMPAIGN_OUT_OF_BUDGET", "CAMPAIGN_PAUSED", "CAMPAIGN_ARCHIVED", "CAMPAIGN_INCOMPLETE", "ACCOUNT_OUT_OF_BUDGET"]
+        }
    }
 }

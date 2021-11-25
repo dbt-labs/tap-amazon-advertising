@@ -18,6 +18,13 @@ BASE_URL = 'https://advertising-api.amazon.com'
 
 class BaseStream(base):
     KEY_PROPERTIES = ['id']
+    profile_id = None
+    country_code = None
+
+    def set_profile(self, profile_id, country_code):
+        self.profile_id = profile_id
+        self.country_code = country_code
+        self.client.set_profile_id(profile_id)
 
     def get_params(self):
         return {}
@@ -30,7 +37,12 @@ class BaseStream(base):
 
     def transform_record(self, record, inject_profile=True):
         if inject_profile:
-            record['profileId'] = self.config.get('profile_id')
+            if not self.profile_id:
+                raise RuntimeError("Stream profile_id is None!")
+            if not self.country_code:
+                raise RuntimeError("Stream country_code is None!")
+            record['profileId'] = self.profile_id
+            record['countryCode'] = self.country_code
         transformed = base.transform_record(self, record)
 
         return transformed
@@ -43,17 +55,23 @@ class BaseStream(base):
         params = self.get_params()
         body = self.get_body()
 
-        result = self.client.make_request(
-            url, self.API_METHOD, params=params, body=body)
-        data = self.get_stream_data(result)
-
         with singer.metrics.record_counter(endpoint=table) as counter:
-            for obj in data:
-                singer.write_records(
-                    table,
-                    [obj])
+            for profile in self.config.get('profiles'):
+                LOGGER.info('Syncing data for profile with country code {}'.format(profile['country_code']))
 
-                counter.increment()
+                self.set_profile(profile['profile_id'], profile['country_code'])
+
+                result = self.client.make_request(
+                    url, self.API_METHOD, params=params, body=body)
+                data = self.get_stream_data(result)
+
+                for obj in data:
+                    singer.write_records(
+                        table,
+                        [obj])
+
+                    counter.increment()
+
         return self.state
 
 class PaginatedStream(BaseStream):
@@ -72,26 +90,31 @@ class PaginatedStream(BaseStream):
 
         index = 0
         count = 5000
-        while True:
-            LOGGER.info('Syncing {} rows from index {}'.format(count, index))
+        with singer.metrics.record_counter(endpoint=table) as counter:
+            for profile in self.config.get('profiles'):
+                LOGGER.info('Syncing data for profile with country code {}'.format(profile['country_code']))
 
-            params = self.get_params(index, count)
-            result = self.client.make_request(
-                url, self.API_METHOD, params=params, body=body)
+                self.set_profile(profile['profile_id'], profile['country_code'])
 
-            data = self.get_stream_data(result)
-            if len(data) == 0:
-                break
-            else:
-                index += count
+                while True:
+                    LOGGER.info('Syncing {} rows from index {}'.format(count, index))
 
-            with singer.metrics.record_counter(endpoint=table) as counter:
-                for obj in data:
-                    singer.write_records(
-                        table,
-                        [obj])
+                    params = self.get_params(index, count)
+                    result = self.client.make_request(
+                        url, self.API_METHOD, params=params, body=body)
 
-                    counter.increment()
+                    data = self.get_stream_data(result)
+                    if len(data) == 0:
+                        break
+                    else:
+                        index += count
+
+                    for obj in data:
+                        singer.write_records(
+                            table,
+                            [obj])
+
+                        counter.increment()
 
         return self.state
 
@@ -138,31 +161,35 @@ class ReportStream(BaseStream):
         # Add a lookback to refresh attribution metrics for more recent orders
         sync_date -= datetime.timedelta(days=self.config.get('lookback', 30))
 
-        while sync_date <= yesterday:
-            LOGGER.info("Syncing {} for date {}".format(table, sync_date))
+        with singer.metrics.record_counter(endpoint=table) as counter:
+            for profile in self.config.get('profiles'):
+                LOGGER.info('Syncing data for profile with country code {}'.format(profile['country_code']))
 
-            url = self.get_url(self.api_path)
-            report_url = self.create_report(url, sync_date)
+                profile_id = profile['profile_id']
+                sync_date_copy = sync_date
+                while sync_date_copy <= yesterday:
+                    LOGGER.info("Syncing {} for date {}".format(table, sync_date_copy))
 
-            if report_url is None:
-                break
+                    url = self.get_url(self.api_path)
+                    report_url = self.create_report(url, sync_date_copy)
 
-            result = self.client.download_gzip(report_url)
-            data = self.get_stream_data(result, sync_date)
+                    if report_url is None:
+                        break
 
-            with singer.metrics.record_counter(endpoint=table) as counter:
-                for obj in data:
-                    singer.write_records(
-                        table,
-                        [obj])
+                    result = self.client.download_gzip(report_url)
+                    data = self.get_stream_data(result, sync_date_copy)
 
-                    counter.increment()
+                    for obj in data:
+                        singer.write_records(
+                            table,
+                            [obj])
 
+                        counter.increment()
 
-            self.state = incorporate(self.state, self.TABLE,
-                                     'last_record', sync_date.isoformat())
-            save_state(self.state)
+                    self.state = incorporate(self.state, self.TABLE,
+                                            'last_record', sync_date_copy.isoformat())
+                    save_state(self.state)
 
-            sync_date += datetime.timedelta(days=1)
+                    sync_date_copy += datetime.timedelta(days=1)
 
         return self.state
