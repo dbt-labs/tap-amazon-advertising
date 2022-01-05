@@ -1,6 +1,8 @@
 
 from tap_amazon_advertising.streams.profiles import ProfilesStream
 from tap_amazon_advertising.streams.portfolios import PortfoliosStream
+from tap_amazon_advertising.streams.sponsored_displays import SponsoredDisplaysAdGroupsStream, SponsoredDisplaysCampaignsStream, SponsoredDisplaysProductAdsStream
+from tap_amazon_advertising.streams.sponsored_displays_report import SponsoredDisplaysReportAdGroupsStream, SponsoredDisplaysReportCampaignsStream, SponsoredDisplaysReportProductAdsStream
 from tap_amazon_advertising.streams.sponsored_products_campaigns import SponsoredProductsCampaignsStream
 from tap_amazon_advertising.streams.sponsored_brands_campaigns import SponsoredBrandsCampaignsStream
 from tap_amazon_advertising.streams.ad_groups import AdGroupsStream
@@ -15,9 +17,11 @@ from tap_amazon_advertising.streams.sponsored_products_report import SponsoredPr
         SponsoredProductsReportKeywordsStream
 
 from tap_amazon_advertising.streams.sponsored_brands_report import SponsoredBrandsReportKeywordsStream, \
-        SponsoredBrandsReportCampaignsStream, \
-        SponsoredBrandsReportAdGroupsStream
-
+    SponsoredBrandsReportCampaignsStream, \
+    SponsoredBrandsReportAdGroupsStream, \
+    SponsoredBrandsVideoReportCampaignsStream, \
+    SponsoredBrandsVideoReportKeywordsStream, \
+    SponsoredBrandsVideoReportAdGroupsStream
 
 AVAILABLE_STREAMS = [
     ProfilesStream,
@@ -40,6 +44,22 @@ AVAILABLE_STREAMS = [
     SponsoredBrandsReportKeywordsStream,
     SponsoredBrandsReportCampaignsStream,
     SponsoredBrandsReportAdGroupsStream,
+
+    # SB video Reports
+    SponsoredBrandsVideoReportKeywordsStream,
+    SponsoredBrandsVideoReportCampaignsStream,
+    SponsoredBrandsVideoReportAdGroupsStream,
+
+    # SD Streams
+    SponsoredDisplaysAdGroupsStream,
+    SponsoredDisplaysCampaignsStream,
+    SponsoredDisplaysProductAdsStream,
+
+    # SD Reports
+    SponsoredDisplaysReportAdGroupsStream,
+    SponsoredDisplaysReportCampaignsStream,
+    SponsoredDisplaysReportProductAdsStream,
+
 ]
 
 __all__ = [
@@ -61,4 +81,17 @@ __all__ = [
     'SponsoredBrandsReportKeywordsStream',
     'SponsoredBrandsReportCampaignsStream',
     'SponsoredBrandsReportAdGroupsStream',
+
+    'SponsoredDisplaysAdGroupsStream',
+    'SponsoredDisplaysCampaignsStream',
+    'SponsoredDisplaysProductAdsStream',
+
+    'SponsoredBrandsVideoReportKeywordsStream',
+    'SponsoredBrandsVideoReportCampaignsStream',
+    'SponsoredBrandsVideoReportAdGroupsStream',
+
+    'SponsoredDisplaysReportAdGroupsStream',
+    'SponsoredDisplaysReportCampaignsStream',
+    'SponsoredDisplaysReportProductAdsStream',
+
 ]

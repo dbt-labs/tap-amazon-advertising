@@ -29,6 +29,12 @@ def do_discover(args):
         "sponsored_brands_report_keywords",
         "sponsored_brands_report_campaigns",
         "sponsored_brands_report_ad_groups",
+        "sponsored_brands_video_report_keywords",
+        "sponsored_brands_video_report_campaigns",
+        "sponsored_brands_video_report_ad_groups",
+        "sponsored_displays_report_keywords",
+        "sponsored_displays_report_campaigns",
+        "sponsored_displays_report_ad_groups",
     ]
 
     for available_stream in AVAILABLE_STREAMS:
@@ -45,9 +51,10 @@ def do_discover(args):
                 metadata.write(mdata, (), "forced-replication-method", "INCREMENTAL")
                 metadata.write(mdata, (), "valid-replication-keys", ["day"])
                 schema['metadata'] = metadata.to_list(mdata)
-        catalog += schemas
 
-    json.dump({'streams': catalog}, sys.stdout, indent=4)
+            catalog.append(schema)
+
+    return catalog
 
 
 @singer.utils.handle_top_exception(LOGGER)
@@ -58,12 +65,13 @@ def main():
 
     client = AmazonAdvertisingClient(args.config)
 
-    runner = AmazonAdvertisingRunner(
-        args, client, AVAILABLE_STREAMS)
-
     if args.discover:
-        do_discover(args)
+        catalog = do_discover(args)
+        json.dump({'streams': catalog}, sys.stdout, indent=4)
     else:
+        if not args.catalog:
+            args.catalog = singer.catalog.Catalog.from_dict({'streams': do_discover(args)})
+        runner = AmazonAdvertisingRunner(args, client, AVAILABLE_STREAMS)
         runner.do_sync()
 
 

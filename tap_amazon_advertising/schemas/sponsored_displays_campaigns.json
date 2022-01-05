@@ -1,0 +1,108 @@
+{
+    "title": "CampaignEx",
+    "type": "object",
+    "properties": {
+        "profileId": {
+            "description": "The ID of the profile",
+            "type": "integer"
+        },
+        "portfolioId": {
+            "description": "The ID of the portfolio",
+            "type": "integer"
+        },
+        "campaignId": {
+            "description": "The ID of the campaign",
+            "type": "integer"
+        },
+        "name": {
+            "description": "The name of the campaign",
+            "type": "string"
+        },
+        "costType": {
+            "type": "string"
+        },
+        "deliveryProfile": {
+            "type": "string"
+        },
+        "tactic": {
+            "type": "string"
+        },
+        "targetingType": {
+            "description": "Differentiates between a keyword-targeted and automatically targeted campaign",
+            "type": "string",
+            "oneOf": [
+                "manual",
+                "auto"
+            ]
+        },
+        "bidding": {},
+        "campaignType": {},
+        "networks": {},
+        "state": {
+            "description": "Advertiser-specified state of the campaign",
+            "type": "string",
+            "oneOf": [
+                "enabled",
+                "paused",
+                "archived"
+            ]
+        },
+        "dailyBudget": {
+            "description": "Daily budget for the campaign in dollars",
+            "type": "number",
+            "minimum": 1.0
+        },
+        "startDate": {
+            "description": "The date the campaign will go or went live as YYYYMMDD",
+            "type": "string"
+        },
+        "endDate": {
+            "description": "The optional date the campaign will stop running as YYYYMMDD",
+            "type": "string"
+        },
+        "premiumBidAdjustment": {
+            "description": "When enabled, Amazon will increase the default bid for your ads that are eligible to appear in this placement. See developer notes for more information.",
+            "type": "boolean"
+        },
+        "placement": {
+            "description": "Ad placement. Only returned when segment is set to placement.",
+            "type": "string",
+            "oneOf": [
+                "Top of Search on-Amazon",
+                "Other on-Amazon"
+            ]
+        },
+        "creationDate": {
+            "description": "The date the campaign was created as epoch time in milliseconds",
+            "type": "integer"
+        },
+        "lastUpdatedDate": {
+            "description": "The date the campaign was last updated as epoch time in milliseconds",
+            "type": "integer"
+        },
+        "servingStatus": {
+            "description": "The computed status, accounting for campaign out of budget, policy violations, etc. See developer notes for more information.",
+            "type": "string",
+            "oneOf": [
+                "CAMPAIGN_ARCHIVED",
+                "CAMPAIGN_PAUSED",
+                "CAMPAIGN_STATUS_ENABLED",
+                "ADVERTISER_PAYMENT_FAILURE",
+                "CAMPAIGN_OUT_OF_BUDGET",
+                "ACCOUNT_OUT_OF_BUDGET"
+            ]
+        },
+        "bidOptimization": {
+            "type": ["null", "boolean"]
+        },
+        "budget": {
+            "type": ["null", "number"]
+        },
+        "budgetType": {
+            "type": ["null", "string"]
+        },
+        "spendingPolicy": {
+            "type": ["null", "string"]
+        }
+    }
+}

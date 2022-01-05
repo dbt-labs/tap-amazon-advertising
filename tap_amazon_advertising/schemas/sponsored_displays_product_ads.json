@@ -1,0 +1,36 @@
+{
+    "title": "CampaignEx",
+    "type": "object",
+    "properties": {
+        "campaignId": {
+            "type": "integer"
+        },
+        "creationDate": {
+            "type": "integer"
+        },
+        "lastUpdatedDate": {
+            "type": "integer"
+        },
+        "servingStatus": {
+            "type": "string"
+        },
+        "adGroupId": {
+            "type": "string"
+        },
+        "asin": {
+            "type": "string"
+        },
+        "sku": {
+            "type": "string"
+        },
+        "state": {
+            "type": "string"
+        },
+        "profileId": {
+            "type": "string"
+        },
+        "adId": {
+            "type": "string"
+        }
+    }
+}

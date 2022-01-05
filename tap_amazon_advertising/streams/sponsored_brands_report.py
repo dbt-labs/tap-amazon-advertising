@@ -1,7 +1,6 @@
-from tap_amazon_advertising.streams.base import ReportStream
-
 import singer
-import json
+
+from tap_amazon_advertising.streams.base import ReportStream
 
 LOGGER = singer.get_logger()  # noqa
 
@@ -28,6 +27,7 @@ class BaseSponsoredBrandsReportStream(ReportStream):
             self.transform_record(record)
             for record in result
         ]
+
 
 class SponsoredBrandsReportKeywordsStream(BaseSponsoredBrandsReportStream):
     TABLE = 'sponsored_brands_report_keywords'
@@ -63,6 +63,48 @@ class SponsoredBrandsReportKeywordsStream(BaseSponsoredBrandsReportStream):
             ])
         }
 
+    @property
+    def recordType(self):
+        return "keywords"
+
+
+class SponsoredBrandsVideoReportKeywordsStream(BaseSponsoredBrandsReportStream):
+    TABLE = "sponsored_brands_video_report_keywords"
+    KEY_PROPERTIES = ['keywordId', 'day', 'profileId']
+
+    def get_body(self, day):
+        return {
+            "reportDate": day.strftime('%Y%m%d'),
+            "metrics": ",".join([
+                "campaignName",
+                "campaignId",
+                "campaignStatus",
+                "campaignBudget",
+                "campaignBudgetType",
+                "adGroupName",
+                "adGroupId",
+                "keywordText",
+                "matchType",
+                "impressions",
+                "clicks",
+                "cost",
+                "attributedSales14d",
+                "attributedSales14dSameSKU",
+                "attributedConversions14d",
+                "attributedConversions14dSameSKU",
+                "viewableImpressions",
+                "videoFirstQuartileViews",
+                "videoMidpointViews",
+                "videoThirdQuartileViews",
+                "videoCompleteViews",
+                "video5SecondViews",
+                "video5SecondViewRate",
+                "videoUnmutes",
+                "vtr",
+                "vctr",
+            ]),
+            "creativeType": "video"
+        }
 
     @property
     def recordType(self):
@@ -76,7 +118,6 @@ class SponsoredBrandsReportAdGroupsStream(BaseSponsoredBrandsReportStream):
     @property
     def recordType(self):
         return "adGroups"
-
 
     def get_body(self, day):
         return {
@@ -104,6 +145,47 @@ class SponsoredBrandsReportAdGroupsStream(BaseSponsoredBrandsReportStream):
                 "attributedUnitsOrderedNewToBrand14d",
                 "attributedUnitsOrderedNewToBrandPercentage14d",
             ])
+        }
+
+
+class SponsoredBrandsVideoReportAdGroupsStream(BaseSponsoredBrandsReportStream):
+    TABLE = "sponsored_brands_video_report_ad_groups"
+    KEY_PROPERTIES = ['adGroupId', 'day', 'profileId']
+
+    @property
+    def recordType(self):
+        return "adGroups"
+
+    def get_body(self, day):
+        return {
+            "reportDate": day.strftime('%Y%m%d'),
+            "metrics": ",".join([
+                "campaignName",
+                "campaignId",
+                "campaignStatus",
+                "campaignBudget",
+                "campaignBudgetType",
+                "adGroupName",
+                "adGroupId",
+                "impressions",
+                "clicks",
+                "cost",
+                "attributedSales14d",
+                "attributedSales14dSameSKU",
+                "attributedConversions14d",
+                "attributedConversions14dSameSKU",
+                "viewableImpressions",
+                "videoFirstQuartileViews",
+                "videoMidpointViews",
+                "videoThirdQuartileViews",
+                "videoCompleteViews",
+                "video5SecondViews",
+                "video5SecondViewRate",
+                "videoUnmutes",
+                "vtr",
+                "vctr",
+            ]),
+            "creativeType": "video"
         }
 
 
@@ -140,3 +222,42 @@ class SponsoredBrandsReportCampaignsStream(BaseSponsoredBrandsReportStream):
     @property
     def recordType(self):
         return "campaigns"
+
+
+class SponsoredBrandsVideoReportCampaignsStream(BaseSponsoredBrandsReportStream):
+    TABLE = "sponsored_brands_video_report_campaigns"
+    KEY_PROPERTIES = ['campaignId', 'day', 'profileId']
+
+    @property
+    def recordType(self):
+        return "campaigns"
+
+    def get_body(self, day):
+        return {
+            "reportDate": day.strftime('%Y%m%d'),
+            "metrics": ",".join([
+                "campaignName",
+                "campaignId",
+                "campaignStatus",
+                "campaignBudget",
+                "campaignBudgetType",
+                "impressions",
+                "clicks",
+                "cost",
+                "attributedSales14d",
+                "attributedSales14dSameSKU",
+                "attributedConversions14d",
+                "attributedConversions14dSameSKU",
+                "viewableImpressions",
+                "videoFirstQuartileViews",
+                "videoMidpointViews",
+                "videoThirdQuartileViews",
+                "videoCompleteViews",
+                "video5SecondViews",
+                "video5SecondViewRate",
+                "videoUnmutes",
+                "vtr",
+                "vctr",
+            ]),
+            "creativeType": "video"
+        }

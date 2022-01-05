@@ -1,0 +1,90 @@
+{
+    "type": "object",
+    "properties": {
+        "profileId": {
+            "description": "The ID of the profile",
+            "type": "integer"
+        },
+        "day": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "keywordId": {
+            "type": ["null", "string"]
+        },
+        "cost": {
+            "type": ["null", "number"]
+        },
+        "adGroupId": {
+            "type": ["null", "string"]
+        },
+        "adGroupName": {
+            "type": ["null", "string"]
+        },
+        "campaignId": {
+            "type": ["null", "string"]
+        },
+        "impressions": {
+            "type": ["null", "number"]
+        },
+        "clicks": {
+            "type": ["null", "number"]
+        },
+        "campaignName": {
+            "type": ["null", "string"]
+        },
+        "campaignBudget": {
+            "type": ["null", "number"]
+        },
+        "campaignBudgetType": {
+            "type": ["null", "string"]
+        },
+        "campaignStatus": {
+            "type": ["null", "string"]
+        },
+        "attributedSales14dSameSKU": {
+            "type": ["null", "number"]
+        },
+        "attributedConversions14d": {
+            "type": ["null", "number"]
+        },
+        "attributedConversions14dSameSKU": {
+            "type": ["null", "number"]
+        },
+        "viewableImpressions": {
+            "type": ["null", "number"]
+        },
+        "videoFirstQuartileViews": {
+            "type": ["null", "number"]
+        },
+        "videoMidpointViews": {
+            "type": ["null", "number"]
+        },
+        "videoThirdQuartileViews": {
+            "type": ["null", "number"]
+        },
+        "videoCompleteViews": {
+            "type": ["null", "number"]
+        },
+        "video5SecondViews": {
+            "type": ["null", "number"]
+        },
+        "video5SecondViewRate": {
+            "type": ["null", "number"]
+        },
+        "videoUnmutes": {
+            "type": ["null", "number"]
+        },
+        "vtr": {
+            "type": ["null", "number"]
+        },
+        "vctr": {
+            "type": ["null", "number"]
+        },
+        "attributedSales14d": {
+            "type": ["null", "number"]
+        }
+    }
+}
+
+

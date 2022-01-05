@@ -1,0 +1,76 @@
+{
+    "type": "object",
+    "properties": {
+        "profileId": {
+            "description": "The ID of the profile",
+            "type": "integer"
+        },
+        "day": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "adId": {
+            "type": ["null", "string"]
+        },
+        "adGroupId": {
+            "type": ["null", "string"]
+        },
+        "campaignId": {
+            "type": ["null", "string"]
+        },
+        "asin": {
+            "type": ["null", "string"]
+        },
+        "sku": {
+            "type": ["null", "string"]
+        },
+        "currency": {
+            "type": ["null", "string"]
+        },
+        "adGroupName": {
+            "type": ["null", "string"]
+        },
+        "campaignName": {
+            "type": ["null", "string"]
+        },
+        "cost": {
+            "type": ["null", "number"]
+        },
+        "impressions": {
+            "type": ["null", "number"]
+        },
+        "clicks": {
+            "type": ["null", "number"]
+        },
+        "bidOptimization": {"type": ["null", "string"]},
+        "attributedConversions1d": {"type": ["null", "number"]},
+        "attributedConversions7d": {"type": ["null", "number"]},
+        "attributedConversions14d": {"type": ["null", "number"]},
+        "attributedConversions30d": {"type": ["null", "number"]},
+        "attributedConversions1dSameSKU": {"type": ["null", "number"]},
+        "attributedConversions7dSameSKU": {"type": ["null", "number"]},
+        "attributedConversions14dSameSKU": {"type": ["null", "number"]},
+        "attributedConversions30dSameSKU": {"type": ["null", "number"]},
+        "attributedUnitsOrdered1d": {"type": ["null", "number"]},
+        "attributedUnitsOrdered7d": {"type": ["null", "number"]},
+        "attributedUnitsOrdered14d": {"type": ["null", "number"]},
+        "attributedUnitsOrdered30d": {"type": ["null", "number"]},
+        "attributedSales1d": {"type": ["null", "number"]},
+        "attributedSales7d": {"type": ["null", "number"]},
+        "attributedSales14d": {"type": ["null", "number"]},
+        "attributedSales30d": {"type": ["null", "number"]},
+        "attributedSales1dSameSKU": {"type": ["null", "number"]},
+        "attributedSales7dSameSKU": {"type": ["null", "number"]},
+        "attributedSales14dSameSKU": {"type": ["null", "number"]},
+        "attributedSales30dSameSKU": {"type": ["null", "number"]},
+        "attributedOrdersNewToBrand14d": {"type": ["null", "number"]},
+        "attributedSalesNewToBrand14d": {"type": ["null", "number"]},
+        "attributedUnitsOrderedNewToBrand14d": {"type": ["null", "number"]},
+        "viewImpressions": {"type": ["null", "number"]},
+        "viewAttributedConversions14d": {"type": ["null", "number"]},
+        "viewAttributedSales14d": {"type": ["null", "number"]},
+        "viewAttributedUnitsOrdered14d": {"type": ["null", "number"]},
+        "attributedDetailPageView14d": {"type": ["null", "number"]},
+        "viewAttributedDetailPageView14d": {"type": ["null", "number"]}
+    }
+}

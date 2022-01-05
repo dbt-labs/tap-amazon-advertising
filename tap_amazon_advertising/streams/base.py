@@ -129,7 +129,7 @@ class ReportStream(BaseStream):
     def sync_data(self):
         table = self.TABLE
         LOGGER.info('Syncing data for entity {}'.format(table))
-
+        schema_dict = self.catalog.schema.to_dict()
         today = datetime.date.today()
 
         sync_date = get_last_record_value_for_table(self.state, table)
@@ -155,6 +155,7 @@ class ReportStream(BaseStream):
 
             with singer.metrics.record_counter(endpoint=table) as counter:
                 for obj in data:
+                    obj = singer.transform(obj, schema_dict)
                     singer.write_records(
                         table,
                         [obj])
