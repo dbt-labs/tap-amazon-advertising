@@ -32,7 +32,7 @@ def do_discover(args):
         "sponsored_brands_video_report_keywords",
         "sponsored_brands_video_report_campaigns",
         "sponsored_brands_video_report_ad_groups",
-        "sponsored_displays_report_keywords",
+        "sponsored_displays_report_product_ads",
         "sponsored_displays_report_campaigns",
         "sponsored_displays_report_ad_groups",
     ]
