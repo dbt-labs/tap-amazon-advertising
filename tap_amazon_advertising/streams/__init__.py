@@ -1,4 +1,4 @@
-from tap_amazon_advertising.streams.dsp import DSPOrders
+
 from tap_amazon_advertising.streams.profiles import ProfilesStream
 from tap_amazon_advertising.streams.portfolios import PortfoliosStream
 from tap_amazon_advertising.streams.sponsored_displays import SponsoredDisplaysAdGroupsStream, SponsoredDisplaysCampaignsStream, SponsoredDisplaysProductAdsStream
