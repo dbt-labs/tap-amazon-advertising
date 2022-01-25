@@ -35,6 +35,9 @@ def do_discover(args):
         "sponsored_displays_report_product_ads",
         "sponsored_displays_report_campaigns",
         "sponsored_displays_report_ad_groups",
+        "sponsored_displays_report_product_ads_audiences",
+        "sponsored_displays_report_campaigns_audiences",
+        "sponsored_displays_report_ad_groups_audiences",
     ]
 
     for available_stream in AVAILABLE_STREAMS:

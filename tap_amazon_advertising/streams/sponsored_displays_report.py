@@ -85,6 +85,15 @@ class SponsoredDisplaysReportProductAdsStream(BaseSponsoredDisplaysReportStream)
         }
 
 
+class SponsoredDisplaysReportProductAdsAudiencesStream(SponsoredDisplaysReportProductAdsStream):
+    TABLE = 'sponsored_displays_report_product_ads_audiences'
+
+    def get_body(self, day):
+        body = super().get_body(day)
+        body["tactic"] = "T00030"
+        return body
+
+
 class SponsoredDisplaysReportAdGroupsStream(BaseSponsoredDisplaysReportStream):
     TABLE = 'sponsored_displays_report_ad_groups'
     KEY_PROPERTIES = ['adGroupId', 'day', 'profileId']
@@ -141,6 +150,15 @@ class SponsoredDisplaysReportAdGroupsStream(BaseSponsoredDisplaysReportStream):
         }
 
 
+class SponsoredDisplaysReportAdGroupsAudiencesStream(SponsoredDisplaysReportAdGroupsStream):
+    TABLE = 'sponsored_displays_report_ad_groups_audiences'
+
+    def get_body(self, day):
+        body = super().get_body(day)
+        body["tactic"] = "T00030"
+        return body
+
+
 class SponsoredDisplaysReportCampaignsStream(BaseSponsoredDisplaysReportStream):
     TABLE = 'sponsored_displays_report_campaigns'
     KEY_PROPERTIES = ['campaignId', 'day', 'profileId']
@@ -192,3 +210,12 @@ class SponsoredDisplaysReportCampaignsStream(BaseSponsoredDisplaysReportStream):
     @property
     def recordType(self):
         return "campaigns"
+
+
+class SponsoredDisplaysReportCampaignsAudiencesStream(SponsoredDisplaysReportCampaignsStream):
+    TABLE = 'sponsored_displays_report_campaigns_audiences'
+
+    def get_body(self, day):
+        body = super().get_body(day)
+        body["tactic"] = "T00030"
+        return body

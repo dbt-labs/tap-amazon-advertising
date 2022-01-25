@@ -1,8 +1,11 @@
-
+from tap_amazon_advertising.streams.dsp import DSPOrders
 from tap_amazon_advertising.streams.profiles import ProfilesStream
 from tap_amazon_advertising.streams.portfolios import PortfoliosStream
 from tap_amazon_advertising.streams.sponsored_displays import SponsoredDisplaysAdGroupsStream, SponsoredDisplaysCampaignsStream, SponsoredDisplaysProductAdsStream
-from tap_amazon_advertising.streams.sponsored_displays_report import SponsoredDisplaysReportAdGroupsStream, SponsoredDisplaysReportCampaignsStream, SponsoredDisplaysReportProductAdsStream
+from tap_amazon_advertising.streams.sponsored_displays_report import SponsoredDisplaysReportAdGroupsStream, \
+    SponsoredDisplaysReportCampaignsStream, SponsoredDisplaysReportProductAdsStream, \
+    SponsoredDisplaysReportProductAdsAudiencesStream, SponsoredDisplaysReportCampaignsAudiencesStream, \
+    SponsoredDisplaysReportAdGroupsAudiencesStream
 from tap_amazon_advertising.streams.sponsored_products_campaigns import SponsoredProductsCampaignsStream
 from tap_amazon_advertising.streams.sponsored_brands_campaigns import SponsoredBrandsCampaignsStream
 from tap_amazon_advertising.streams.ad_groups import AdGroupsStream
@@ -59,6 +62,9 @@ AVAILABLE_STREAMS = [
     SponsoredDisplaysReportAdGroupsStream,
     SponsoredDisplaysReportCampaignsStream,
     SponsoredDisplaysReportProductAdsStream,
+    SponsoredDisplaysReportAdGroupsAudiencesStream,
+    SponsoredDisplaysReportCampaignsAudiencesStream,
+    SponsoredDisplaysReportProductAdsAudiencesStream,
 
 ]
 
