@@ -1,0 +1,3048 @@
+interactions:
+- request:
+    body: grant_type=refresh_token&client_id=XXXXXXXXX&client_secret=XXXXXXXXXXXXX&scope=advertising%3A%3Acampaign_management&refresh_token=XXXXXXXXXXXXX
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '759'
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      User-Agent:
+      - python-requests/2.18.4
+    method: POST
+    uri: https://api.amazon.com/auth/o2/token
+  response:
+    body:
+      string: "{\n    \"access_token\": \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXX_XXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n
+        \   \"refresh_token\": \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXX_XXXXXXXXXXXXXXXXX-XX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n
+        \   \"scope\": \"advertising::campaign_management\",\n    \"token_type\":
+        \"XXXXXX\",\n    \"expires_in\": 3601\n}"
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1169'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Sat, 17 Sep 2022 20:32:10 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Server
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains; preload
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      X-Amz-Date:
+      - Sat, 17 Sep 2022 20:32:10 GMT
+      x-amz-rid:
+      - RAEZGPGK4G74P59ZAY8Q
+      x-amzn-RequestId:
+      - 8124ded5-8304-4f5b-b38a-fc1c2241458f
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"reportDate": "20220721", "metrics": "campaignName,campaignId,adGroupName,adGroupId,impressions,clicks,cost,attributedConversions1d,attributedConversions7d,attributedConversions14d,attributedConversions30d,attributedConversions1dSameSKU,attributedConversions7dSameSKU,attributedConversions14dSameSKU,attributedConversions30dSameSKU,attributedUnitsOrdered1d,attributedUnitsOrdered7d,attributedUnitsOrdered14d,attributedUnitsOrdered30d,attributedSales1d,attributedSales7d,attributedSales14d,attributedSales30d,attributedSales1dSameSKU,attributedSales7dSameSKU,attributedSales14dSameSKU,attributedSales30dSameSKU"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '612'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: POST
+    uri: https://advertising-api.amazon.com/v2/sp/adGroups/report
+  response:
+    body:
+      string: '{"reportId":"amzn1.clicksAPI.v1.p1.63262ECB.35db1de2-bbd5-4ffd-abdd-338e55b20fa5","recordType":"adGroup","status":"IN_PROGRESS","statusDetails":"Report
+        is being generated."}'
+    headers:
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 17 Sep 2022 20:32:11 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-rid:
+      - NRHVJXRPW3GDJ10PC4QD
+    status:
+      code: 202
+      message: Accepted
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ECB.35db1de2-bbd5-4ffd-abdd-338e55b20fa5
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ECB.35db1de2-bbd5-4ffd-abdd-338e55b20fa5\",\n
+        \   \"status\": \"SUCCESS\",\n    \"statusDetails\": \"Report has been successfully
+        generated.\",\n    \"location\": \"https://advertising-api.amazon.com/v1/reports/amzn1.clicksAPI.v1.p1.63262ECB.35db1de2-bbd5-4ffd-abdd-338e55b20fa5/download\",\n
+        \   \"fileSize\": 662,\n    \"expiration\": 1671235200001\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:32:16 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - X8HPBAJ9AJ28NXPMB055
+      x-amz-rid:
+      - X8HPBAJ9AJ28NXPMB055
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v1/reports/amzn1.clicksAPI.v1.p1.63262ECB.35db1de2-bbd5-4ffd-abdd-338e55b20fa5/download
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Sat, 17 Sep 2022 20:32:17 GMT
+      Location:
+      - https://amazon-advertising-api-reports-prod-usamazon.s3.amazonaws.com/atvpdkikx0der-a3dk7u31py9toe-report-adgroup-f8fc5623-aeea-4e12-a73c-3be1c95950d5.json.gz?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220917T203217Z&X-Amz-SignedHeaders=host&X-Amz-Expires=30&X-Amz-Credential=AKIA3P6LC7AREO72ADZQ%2F20220917%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=650a16949f93232203f125fb1ddbe0763580b7307f7fafd808b1085b4283c8b5
+      Server:
+      - Server
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 88J5YV86ZVPCHZFE36VJ
+      x-amz-rid:
+      - 88J5YV86ZVPCHZFE36VJ
+    status:
+      code: 307
+      message: Temporary Redirect
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://amazon-advertising-api-reports-prod-usamazon.s3.amazonaws.com/atvpdkikx0der-a3dk7u31py9toe-report-adgroup-f8fc5623-aeea-4e12-a73c-3be1c95950d5.json.gz?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220917T203217Z&X-Amz-SignedHeaders=host&X-Amz-Expires=30&X-Amz-Credential=AKIA3P6LC7AREO72ADZQ%2F20220917%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=650a16949f93232203f125fb1ddbe0763580b7307f7fafd808b1085b4283c8b5
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAO2aTW/TQBCG7/kVls89zM7u7EdvUBAgKFRYPVEOW9sQi8SObAeBEP+dTUjBSXAi
+        4SC29Uq+eDdrz8ej0TvjvJt8i23b1sXtss2zxM7yRmXxOZztrnLYXb4ui7Z5U2d5nWf7u+tDbHf1
+        oio/53VTVOX+3uZEYud58vK6/+Cvd2XP6mq5eOHuBDMSOBISKM17zu351TVGHNhUx23aNjutmrZr
+        4mu3F5/HT4omrdyJr9F6NWJxXzj/nIJtO1I7X9jiY7nyn2kjUDGBRoBhtB9V0ePCXWq7u8V8UefN
+        2q0DGT+U2p0H9kV8y5tZkX7afd+d7Vv+boL5aNlWc9sWaXTzO7A3cXSx+VlvbH8+7/vZwwBfkQF0
+        4GsFXPsK/uO6sll0adt0ejrkERRHDkxxxaUYA/KXtlzameP9bd7ktk6no8OdAXBOioAEKfS20F9N
+        a9vkAfgA/FDgpeESwIBgQkv0lfenX2zaBtwD7oPlDAIwKR3tLufMb9xtmUX/pNCjk/FcSwe+EILL
+        UZF/VVcfitbezvLRsc8UAkk0zGjN9X2o9RGGah+q/d8TT9r1rkyjk/NkvG1euzU+EB+IH0K8lpoL
+        KRFdG8v7wf3PxHfGNQH4APwQ4NG1rYDK6dnVaF75SnxX1CQLWxZNaGQD90O4RyO1YMCJcWXIV+63
+        tE0AP4A/HHyna4RT8yBJSuPthL4rcQL3gfsTTG8EMeGwRwmE4h5wH+aVYV45iHiNYEAx7qod87eZ
+        DSP6gPzJkAdA7S7XzDp97+33qSSJVv+OelWdTtIw0kwxJpyiQVJj4P14EB8W2pwkaCKB5HLsbTXf
+        ZOV5cTq0SXEi4BpXn5xHUcqPB3GD9uT95AfZWYudICwAAA==
+    headers:
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '661'
+      Content-Type:
+      - application/octet-stream
+      Date:
+      - Sat, 17 Sep 2022 20:32:20 GMT
+      ETag:
+      - '"2871ab9e6770ab0722ea65f1967b9776"'
+      Last-Modified:
+      - Sat, 17 Sep 2022 20:32:14 GMT
+      Server:
+      - AmazonS3
+      x-amz-expiration:
+      - expiry-date="Sat, 17 Dec 2022 00:00:00 GMT", rule-id="90 Day Retention Policy"
+      x-amz-id-2:
+      - 36FWTRSQVcJ58RzIbgBk8sn8S45D8pf8zgTjH6q16/gFaKqjOVc4tFJe1lkvNX2DE8VkQImeiyc=
+      x-amz-request-id:
+      - 4SEEKM8FQFWCSY2S
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"reportDate": "20220722", "metrics": "campaignName,campaignId,adGroupName,adGroupId,impressions,clicks,cost,attributedConversions1d,attributedConversions7d,attributedConversions14d,attributedConversions30d,attributedConversions1dSameSKU,attributedConversions7dSameSKU,attributedConversions14dSameSKU,attributedConversions30dSameSKU,attributedUnitsOrdered1d,attributedUnitsOrdered7d,attributedUnitsOrdered14d,attributedUnitsOrdered30d,attributedSales1d,attributedSales7d,attributedSales14d,attributedSales30d,attributedSales1dSameSKU,attributedSales7dSameSKU,attributedSales14dSameSKU,attributedSales30dSameSKU"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '612'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: POST
+    uri: https://advertising-api.amazon.com/v2/sp/adGroups/report
+  response:
+    body:
+      string: '{"reportId":"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65","recordType":"adGroup","status":"IN_PROGRESS","statusDetails":"Report
+        is being generated."}'
+    headers:
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 17 Sep 2022 20:32:20 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-rid:
+      - MZ77H4X5S85CPD4DX842
+    status:
+      code: 202
+      message: Accepted
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        is in progress.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:32:25 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - F5VRY5631W3PFPBSYAQC
+      x-amz-rid:
+      - F5VRY5631W3PFPBSYAQC
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        is in progress.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:32:31 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - WNF581H96AY1AXWP4EN3
+      x-amz-rid:
+      - WNF581H96AY1AXWP4EN3
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        is in progress.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:32:37 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - M7K2WYPQWYK02MP617CK
+      x-amz-rid:
+      - M7K2WYPQWYK02MP617CK
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        is in progress.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:32:44 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 3AK5SXZMN4MB40GGHF4J
+      x-amz-rid:
+      - 3AK5SXZMN4MB40GGHF4J
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        is in progress.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:32:50 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - TF47D24QDM96T0M5H76D
+      x-amz-rid:
+      - TF47D24QDM96T0M5H76D
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        is in progress.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:32:57 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 3HF6G9WQYY9X1F276A7P
+      x-amz-rid:
+      - 3HF6G9WQYY9X1F276A7P
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        is in progress.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:33:03 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - DJG08WNKGT4HYEPEN4EK
+      x-amz-rid:
+      - DJG08WNKGT4HYEPEN4EK
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        is in progress.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:33:10 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - SXTQ02GFZR0RWERTJRR2
+      x-amz-rid:
+      - SXTQ02GFZR0RWERTJRR2
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        is in progress.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:33:16 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 8MQ3VHJJX7EVCBS2B3G0
+      x-amz-rid:
+      - 8MQ3VHJJX7EVCBS2B3G0
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        is in progress.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:33:23 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - D42QH1YQXBY4Q2KN73V3
+      x-amz-rid:
+      - D42QH1YQXBY4Q2KN73V3
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:33:29 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - VG953WX1JQTDD2B0Z5V6
+      x-amz-rid:
+      - VG953WX1JQTDD2B0Z5V6
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:33:36 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - E3M9PH87K5EGPVRHEKR6
+      x-amz-rid:
+      - E3M9PH87K5EGPVRHEKR6
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:33:42 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 637ND5BBHW1CVT91F2NA
+      x-amz-rid:
+      - 637ND5BBHW1CVT91F2NA
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:33:49 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - QYEVN2X5J8SV6S1F632A
+      x-amz-rid:
+      - QYEVN2X5J8SV6S1F632A
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:33:55 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 7TXQ08X7HQVM8GXPAVE6
+      x-amz-rid:
+      - 7TXQ08X7HQVM8GXPAVE6
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:34:01 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - ZEN3QG7C8Z0QBDYAGHQH
+      x-amz-rid:
+      - ZEN3QG7C8Z0QBDYAGHQH
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:34:08 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - HE1MVJRYKVAT1NCS23KG
+      x-amz-rid:
+      - HE1MVJRYKVAT1NCS23KG
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:34:14 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - F1SE9GJC6AWZKD6X46WX
+      x-amz-rid:
+      - F1SE9GJC6AWZKD6X46WX
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:34:21 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - J259GYZRG9F5RGRDHDAX
+      x-amz-rid:
+      - J259GYZRG9F5RGRDHDAX
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:34:27 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - M2WR2ES35YXVKRXT5RP8
+      x-amz-rid:
+      - M2WR2ES35YXVKRXT5RP8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:34:34 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - JDEZXX74MMD6WWXHHDTZ
+      x-amz-rid:
+      - JDEZXX74MMD6WWXHHDTZ
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:34:40 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - RF4Q4PYWMNWS5KT8FJ6R
+      x-amz-rid:
+      - RF4Q4PYWMNWS5KT8FJ6R
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:34:46 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - WHT4CCN9K20CS3S7H9XQ
+      x-amz-rid:
+      - WHT4CCN9K20CS3S7H9XQ
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:34:53 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 1F49725HFH61G0R0ZCJV
+      x-amz-rid:
+      - 1F49725HFH61G0R0ZCJV
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:34:59 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 3XDFD30DNA2V8WFDB1NH
+      x-amz-rid:
+      - 3XDFD30DNA2V8WFDB1NH
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:35:06 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - AQQ5BTQ7B1QGNAFP58N2
+      x-amz-rid:
+      - AQQ5BTQ7B1QGNAFP58N2
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:35:13 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - N4HSNF5FXFA1ANE7JB9F
+      x-amz-rid:
+      - N4HSNF5FXFA1ANE7JB9F
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:35:19 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - ERC1S7KC99WX79RBP7Q4
+      x-amz-rid:
+      - ERC1S7KC99WX79RBP7Q4
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:35:25 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - VZ484YZBJHX5QZYVDPPP
+      x-amz-rid:
+      - VZ484YZBJHX5QZYVDPPP
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:35:32 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - D59S86V76FATY4QB1J3E
+      x-amz-rid:
+      - D59S86V76FATY4QB1J3E
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:35:38 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 6D0XS1G18RYX84QMCSTE
+      x-amz-rid:
+      - 6D0XS1G18RYX84QMCSTE
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:35:45 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - AGC2PFJHN1JYM82Z0KD3
+      x-amz-rid:
+      - AGC2PFJHN1JYM82Z0KD3
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:35:51 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - TF8MGVEMKPJ16MKP7T6N
+      x-amz-rid:
+      - TF8MGVEMKPJ16MKP7T6N
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:35:58 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 9DBF9CYJ1HB1SH8GYRAD
+      x-amz-rid:
+      - 9DBF9CYJ1HB1SH8GYRAD
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:36:04 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - WX4ENRZ2JWQ856V2FTM1
+      x-amz-rid:
+      - WX4ENRZ2JWQ856V2FTM1
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:36:10 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 6JK083A1MX9BB9JH9Z19
+      x-amz-rid:
+      - 6JK083A1MX9BB9JH9Z19
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:36:17 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - XE3M087SN03MJB9DWJV4
+      x-amz-rid:
+      - XE3M087SN03MJB9DWJV4
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:36:23 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 7MY6EWAP3EXSJB345HJ1
+      x-amz-rid:
+      - 7MY6EWAP3EXSJB345HJ1
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:36:30 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - TY94GGQH47TF6XGD8XQJ
+      x-amz-rid:
+      - TY94GGQH47TF6XGD8XQJ
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:36:36 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - A2P2TY6J6B6F6NB14F8M
+      x-amz-rid:
+      - A2P2TY6J6B6F6NB14F8M
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:36:43 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - HZSXGJ3NZPRSM355261J
+      x-amz-rid:
+      - HZSXGJ3NZPRSM355261J
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:36:49 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 38HHSWSCWADZ2SX3R2D3
+      x-amz-rid:
+      - 38HHSWSCWADZ2SX3R2D3
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:36:56 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - B1VPZECHST91EAYZAQWH
+      x-amz-rid:
+      - B1VPZECHST91EAYZAQWH
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:37:02 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - YE2HE0YME846PSPSG9WS
+      x-amz-rid:
+      - YE2HE0YME846PSPSG9WS
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:37:09 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - MKNWR27Y95KQ9Q4AVYSQ
+      x-amz-rid:
+      - MKNWR27Y95KQ9Q4AVYSQ
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:37:15 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 7GS8P8P5493QFJK65B5K
+      x-amz-rid:
+      - 7GS8P8P5493QFJK65B5K
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:37:22 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - PM0Q6NFBN52FAQQ7P51S
+      x-amz-rid:
+      - PM0Q6NFBN52FAQQ7P51S
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:37:28 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - WR1JJW5N8BKKVAZX9CGN
+      x-amz-rid:
+      - WR1JJW5N8BKKVAZX9CGN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:37:34 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 5DZZ0HJ0324B53T9TQ8S
+      x-amz-rid:
+      - 5DZZ0HJ0324B53T9TQ8S
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:37:41 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 2QRBZTMPZ888CD2EAZF8
+      x-amz-rid:
+      - 2QRBZTMPZ888CD2EAZF8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:37:48 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - SMXK3XAHMW0ZHX6AMQJM
+      x-amz-rid:
+      - SMXK3XAHMW0ZHX6AMQJM
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:37:55 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - VFR5AGBJR8MPP1487F6N
+      x-amz-rid:
+      - VFR5AGBJR8MPP1487F6N
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:38:02 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 7N76W6SM76CPRG661VEF
+      x-amz-rid:
+      - 7N76W6SM76CPRG661VEF
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:38:08 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - Z0REZZ3VF7CQ1BKYCDYK
+      x-amz-rid:
+      - Z0REZZ3VF7CQ1BKYCDYK
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:38:14 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - MEQMGSNWV9GPTSA4CJF9
+      x-amz-rid:
+      - MEQMGSNWV9GPTSA4CJF9
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:38:21 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - S8T747R2VVJ16J775696
+      x-amz-rid:
+      - S8T747R2VVJ16J775696
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:38:27 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - R7NT881EDNF65W49NZ08
+      x-amz-rid:
+      - R7NT881EDNF65W49NZ08
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:38:34 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - WGQKG3DE66SEABGJJT9Z
+      x-amz-rid:
+      - WGQKG3DE66SEABGJJT9Z
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:38:40 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - Y01MTJQ3S6TT2YGNTZG8
+      x-amz-rid:
+      - Y01MTJQ3S6TT2YGNTZG8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/reports/amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65
+  response:
+    body:
+      string: "{\n    \"reportId\": \"amzn1.clicksAPI.v1.p1.63262ED4.f4301966-b8e6-4375-9b02-9d2d2ff0cd65\",\n
+        \   \"status\": \"IN_PROGRESS\",\n    \"statusDetails\": \"Report generation
+        job has been submitted.\"\n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:38:47 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - FQJVVC04MRC6PV42EYAD
+      x-amz-rid:
+      - FQJVVC04MRC6PV42EYAD
+    status:
+      code: 200
+      message: OK
+version: 1

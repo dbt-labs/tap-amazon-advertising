@@ -1,0 +1,9 @@
+{
+  "start_date": "2020-01-01T01:42:42Z",
+  "client_id": "client_id",
+  "client_secret": "client-secret",
+  "refresh_token": "refresh-token",
+  "profile_id": "1111111111111111",
+  "base_url": "https://advertising-api.amazon.com",
+  "redirect_uri": "https://app.datos-d.com/api/1/sources/oauth/callback"
+}

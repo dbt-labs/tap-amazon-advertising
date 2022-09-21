@@ -1,0 +1,35 @@
+[tool.black]
+line-length = 120
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = "E203"
+
+[tool.poetry]
+name = "tap-amazon-advertising"
+version = "0.0.1"
+description = "Amazon-Advertising tap"
+authors = ["y42 developers <info@y42.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+tap-framework = "0.0.4"
+
+[tool.poetry.dev-dependencies]
+integrations-testing-framework = {git = "http://github.com/goes-funky/integrations-testing-framework.git"}
+pytest = "^7.1.2"
+coverage = "^6.4.4"
+pytest-cov = "^3.0.0"
+bandit = "^1.7.4"
+
+[tool.poetry.scripts]
+tap-amazon-advertising = "tap_amazon_advertising:main"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

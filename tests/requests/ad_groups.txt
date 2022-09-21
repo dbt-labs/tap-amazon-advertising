@@ -1,0 +1,200 @@
+interactions:
+- request:
+    body: grant_type=refresh_token&client_id=XXXXXXXXX&client_secret=XXXXXXXXXXXXX&scope=advertising%3A%3Acampaign_management&refresh_token=XXXXXXXXXXXXX
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '759'
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      User-Agent:
+      - python-requests/2.18.4
+    method: POST
+    uri: https://api.amazon.com/auth/o2/token
+  response:
+    body:
+      string: "{\n    \"access_token\": \"XXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXX-XXXXXXXXXX__XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXX-XXXXXX_XX_XX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n
+        \   \"refresh_token\": \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXX_XXXXXXXXXXXXXXXXX-XX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n
+        \   \"scope\": \"advertising::campaign_management\",\n    \"token_type\":
+        \"XXXXXX\",\n    \"expires_in\": 3601\n}"
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1190'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Sat, 17 Sep 2022 19:03:39 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Server
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains; preload
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      X-Amz-Date:
+      - Sat, 17 Sep 2022 19:03:39 GMT
+      x-amz-rid:
+      - KRK2BK0JS53TN8FC14Y3
+      x-amzn-RequestId:
+      - 034bd826-cf96-4a9a-a51d-a1884c1cbb12
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/sp/adGroups/extended?startIndex=0&count=5000
+  response:
+    body:
+      string: "[\n    {\n        \"adGroupId\": 41960325250784,\n        \"name\":
+        \"XXXXXXXXXXXXXXXXX\",\n        \"campaignId\": 189427142940916,\n        \"defaultBid\":
+        3.0,\n        \"state\": \"XXXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n
+        \       \"creationDate\": 1487254497001,\n        \"lastUpdatedDate\": 1500106052001\n
+        \   },\n    {\n        \"adGroupId\": 47590225287039,\n        \"name\": \"XXXXXXXXXXX\",\n
+        \       \"campaignId\": 120732301737365,\n        \"defaultBid\": 3.0,\n        \"state\":
+        \"XXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1490800183001,\n        \"lastUpdatedDate\": 1509779144001\n    },\n    {\n
+        \       \"adGroupId\": 100335750545724,\n        \"name\": \"XXXXXXXXXXXX\",\n
+        \       \"campaignId\": 120732301737365,\n        \"defaultBid\": 3.0,\n        \"state\":
+        \"XXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1490800431001,\n        \"lastUpdatedDate\": 1509778441001\n    },\n    {\n
+        \       \"adGroupId\": 69360090414863,\n        \"name\": \"XXXXXXXXXXX\",\n
+        \       \"campaignId\": 120732301737365,\n        \"defaultBid\": 3.0,\n        \"state\":
+        \"XXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1490800480001,\n        \"lastUpdatedDate\": 1509779139001\n    },\n    {\n
+        \       \"adGroupId\": 42001664147362,\n        \"name\": \"XXXXXXXXXXXXXXXXXXXXXX\",\n
+        \       \"campaignId\": 242938617344437,\n        \"defaultBid\": 3.0,\n        \"state\":
+        \"XXXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1490852531001,\n        \"lastUpdatedDate\": 1497281960001\n    },\n    {\n
+        \       \"adGroupId\": 172056291988383,\n        \"name\": \"XXXXXXXXXXXXX\",\n
+        \       \"campaignId\": 120732301737365,\n        \"defaultBid\": 3.0,\n        \"state\":
+        \"XXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1491028706001,\n        \"lastUpdatedDate\": 1509779353001\n    },\n    {\n
+        \       \"adGroupId\": 58902182505599,\n        \"name\": \"XXXXXXXXXXXXXX\",\n
+        \       \"campaignId\": 120732301737365,\n        \"defaultBid\": 3.0,\n        \"state\":
+        \"XXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1491028751001,\n        \"lastUpdatedDate\": 1509779131001\n    },\n    {\n
+        \       \"adGroupId\": 86834662203331,\n        \"name\": \"XXXXXXXXXXXXX\",\n
+        \       \"campaignId\": 120732301737365,\n        \"defaultBid\": 3.0,\n        \"state\":
+        \"XXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1491028796001,\n        \"lastUpdatedDate\": 1509779128001\n    },\n    {\n
+        \       \"adGroupId\": 248602793825078,\n        \"name\": \"XXXXXXXXXXXXXXXXXXX\",\n
+        \       \"campaignId\": 120732301737365,\n        \"defaultBid\": 3.0,\n        \"state\":
+        \"XXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1491029314001,\n        \"lastUpdatedDate\": 1509779121001\n    },\n    {\n
+        \       \"adGroupId\": 229684103513796,\n        \"name\": \"XXXXXXXXXXXXXXXXXXXX\",\n
+        \       \"campaignId\": 120732301737365,\n        \"defaultBid\": 3.0,\n        \"state\":
+        \"XXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1491029348001,\n        \"lastUpdatedDate\": 1509779134001\n    },\n    {\n
+        \       \"adGroupId\": 233045980656694,\n        \"name\": \"XXXXXXXXXXXXXXXXXXX\",\n
+        \       \"campaignId\": 120732301737365,\n        \"defaultBid\": 3.0,\n        \"state\":
+        \"XXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1491029386001,\n        \"lastUpdatedDate\": 1509779119001\n    },\n    {\n
+        \       \"adGroupId\": 174514806260525,\n        \"name\": \"XXXXXXXXXXX\",\n
+        \       \"campaignId\": 242938617344437,\n        \"defaultBid\": 3.0,\n        \"state\":
+        \"XXXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1492011227001,\n        \"lastUpdatedDate\": 1492011227001\n    },\n    {\n
+        \       \"adGroupId\": 182090713073131,\n        \"name\": \"XXXXXXXXXXXX\",\n
+        \       \"campaignId\": 242938617344437,\n        \"defaultBid\": 3.0,\n        \"state\":
+        \"XXXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1497280774001,\n        \"lastUpdatedDate\": 1497280774001\n    },\n    {\n
+        \       \"adGroupId\": 100280288252962,\n        \"name\": \"XXXXXXXXX\",\n
+        \       \"campaignId\": 115817114373258,\n        \"defaultBid\": 3.3,\n        \"state\":
+        \"XXXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1523510188001,\n        \"lastUpdatedDate\": 1523510188001\n    },\n    {\n
+        \       \"adGroupId\": 135608554253731,\n        \"name\": \"XXXXXXXXX\",\n
+        \       \"campaignId\": 157355038273617,\n        \"defaultBid\": 7.3,\n        \"state\":
+        \"XXXXXXX\",\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1523510275001,\n        \"lastUpdatedDate\": 1523510275001\n    }\n]"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 19:03:41 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - VC3C2SAQATTXG8M23XBP
+      x-amz-rid:
+      - VC3C2SAQATTXG8M23XBP
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/sp/adGroups/extended?startIndex=5000&count=5000
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 19:03:43 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - 3NDTQ24ZHKZC844D5M95
+      x-amz-rid:
+      - 3NDTQ24ZHKZC844D5M95
+    status:
+      code: 200
+      message: OK
+version: 1

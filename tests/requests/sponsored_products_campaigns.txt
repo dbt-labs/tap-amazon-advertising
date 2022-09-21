@@ -1,0 +1,175 @@
+interactions:
+- request:
+    body: grant_type=refresh_token&client_id=XXXXXXXXX&client_secret=XXXXXXXXXXXXX&scope=advertising%3A%3Acampaign_management&refresh_token=XXXXXXXXXXXXX
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '759'
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      User-Agent:
+      - python-requests/2.18.4
+    method: POST
+    uri: https://api.amazon.com/auth/o2/token
+  response:
+    body:
+      string: "{\n    \"access_token\": \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXX-XXXXXXXXXXXXXXXXXX_XXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_X_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXX-XXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXX-XXXX\",\n
+        \   \"refresh_token\": \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXX_XXXXXXXXXXXXXXXXX-XX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n
+        \   \"scope\": \"advertising::campaign_management\",\n    \"token_type\":
+        \"XXXXXX\",\n    \"expires_in\": 3601\n}"
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1190'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Sat, 17 Sep 2022 20:46:12 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Server
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains; preload
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      X-Amz-Date:
+      - Sat, 17 Sep 2022 20:46:12 GMT
+      x-amz-rid:
+      - 4Z9N94THDHT48ZM03KK7
+      x-amzn-RequestId:
+      - 44dae589-10ad-472d-8f37-03cb6f269c08
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/sp/campaigns/extended?startIndex=0&count=5000
+  response:
+    body:
+      string: "[\n    {\n        \"campaignId\": 189427142940916,\n        \"name\":
+        \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n        \"campaignType\": \"XXXXXXXXXXXXXXXXX\",\n
+        \       \"targetingType\": \"XXXX\",\n        \"premiumBidAdjustment\": true,\n
+        \       \"dailyBudget\": 11.0,\n        \"startDate\": \"XXXXXXXX\",\n        \"state\":
+        \"XXXXXX\",\n        \"bidding\": {\n            \"strategy\": \"XXXXXXXXXXXXXX\",\n
+        \           \"adjustments\": []\n        },\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n
+        \       \"creationDate\": 1487254497001,\n        \"lastUpdatedDate\": 1547758102001\n
+        \   },\n    {\n        \"campaignId\": 120732301737365,\n        \"name\":
+        \"XXXXXXXXXXXXXXXXXXXXXXXXXX\",\n        \"campaignType\": \"XXXXXXXXXXXXXXXXX\",\n
+        \       \"targetingType\": \"XXXXXX\",\n        \"premiumBidAdjustment\":
+        true,\n        \"dailyBudget\": 51.0,\n        \"startDate\": \"XXXXXXXX\",\n
+        \       \"state\": \"XXXXXX\",\n        \"bidding\": {\n            \"strategy\":
+        \"XXXXXXXXXXXXXX\",\n            \"adjustments\": []\n        },\n        \"servingStatus\":
+        \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\": 1490800183001,\n        \"lastUpdatedDate\":
+        1547758102001\n    },\n    {\n        \"campaignId\": 242938617344437,\n        \"name\":
+        \"XXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n        \"campaignType\": \"XXXXXXXXXXXXXXXXX\",\n
+        \       \"targetingType\": \"XXXXXX\",\n        \"premiumBidAdjustment\":
+        true,\n        \"dailyBudget\": 34.0,\n        \"startDate\": \"XXXXXXXX\",\n
+        \       \"state\": \"XXXXXXX\",\n        \"bidding\": {\n            \"strategy\":
+        \"XXXXXXXXXXXXXX\",\n            \"adjustments\": []\n        },\n        \"servingStatus\":
+        \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\": 1490852531001,\n        \"lastUpdatedDate\":
+        1562916751001\n    },\n    {\n        \"campaignId\": 157355038273617,\n        \"name\":
+        \"XXXXXXXXX\",\n        \"campaignType\": \"XXXXXXXXXXXXXXXXX\",\n        \"targetingType\":
+        \"XXXX\",\n        \"premiumBidAdjustment\": true,\n        \"dailyBudget\":
+        21.0,\n        \"startDate\": \"XXXXXXXX\",\n        \"state\": \"XXXXXX\",\n
+        \       \"bidding\": {\n            \"strategy\": \"XXXXXXXXXXXXXX\",\n            \"adjustments\":
+        []\n        },\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1523510275001,\n        \"lastUpdatedDate\": 1547758102001\n    },\n    {\n
+        \       \"campaignId\": 115817114373258,\n        \"name\": \"XXXXXXXXX\",\n
+        \       \"campaignType\": \"XXXXXXXXXXXXXXXXX\",\n        \"targetingType\":
+        \"XXXX\",\n        \"premiumBidAdjustment\": true,\n        \"dailyBudget\":
+        11.0,\n        \"startDate\": \"XXXXXXXX\",\n        \"state\": \"XXXXXX\",\n
+        \       \"bidding\": {\n            \"strategy\": \"XXXXXXXXXXXXXX\",\n            \"adjustments\":
+        []\n        },\n        \"servingStatus\": \"XXXXXXXXXX_XXXXXXXX\",\n        \"creationDate\":
+        1523510188001,\n        \"lastUpdatedDate\": 1547758102001\n    }\n]"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:46:14 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - NTJYKX3TR7RWFDXBHNBY
+      x-amz-rid:
+      - NTJYKX3TR7RWFDXBHNBY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Amazon-Advertising-API-ClientId:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Amazon-Advertising-API-Scope:
+      - XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Authorization:
+      - XXXXXXXXXXXXX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.18.4
+    method: GET
+    uri: https://advertising-api.amazon.com/v2/sp/campaigns/extended?startIndex=5000&count=5000
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Sep 2022 20:46:15 GMT
+      Server:
+      - Server
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      x-amz-request-id:
+      - B9HQG39J4AHZN2PJXSKB
+      x-amz-rid:
+      - B9HQG39J4AHZN2PJXSKB
+    status:
+      code: 200
+      message: OK
+version: 1
