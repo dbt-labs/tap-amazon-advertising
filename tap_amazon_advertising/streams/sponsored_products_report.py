@@ -5,6 +5,7 @@ import json
 
 LOGGER = singer.get_logger()  # noqa
 
+
 class BaseSponsoredProductsReportStream(ReportStream):
     API_METHOD = 'GET'
 
@@ -84,7 +85,7 @@ class SponsoredProductsReportProductAdsStream(BaseSponsoredProductsReportStream)
                 "cost",
                 "currency",
                 "asin",
-                #"sku", # Not supported for vendors?
+                # "sku", # Not supported for vendors?
                 "attributedConversions1d",
                 "attributedConversions7d",
                 "attributedConversions14d",
@@ -197,6 +198,7 @@ class SponsoredProductsReportAdGroupsStream(BaseSponsoredProductsReportStream):
             ])
         }
 
+
 class SponsoredProductsReportKeywordsStream(BaseSponsoredProductsReportStream):
     TABLE = 'sponsored_products_report_keywords'
     KEY_PROPERTIES = ['keywordId', 'day', 'profileId']
@@ -239,3 +241,48 @@ class SponsoredProductsReportKeywordsStream(BaseSponsoredProductsReportStream):
                 "attributedSales30dSameSKU",
             ])
         }
+
+
+class SponsoredProductsReportTargetStream(BaseSponsoredProductsReportStream):
+    TABLE = 'sponsored_products_report_targets'
+    KEY_PROPERTIES = ['targetId', 'day', 'profileId']
+
+    @property
+    def recordType(self):
+        return "targets"
+
+    def get_body(self, day):
+        return {
+            "reportDate": day.strftime('%Y%m%d'),
+            "metrics": ",".join(
+                ['adGroupId', 'adGroupName', 'attributedConversions14d', 'attributedConversions14dSameSKU',
+                 'attributedConversions1d', 'attributedConversions1dSameSKU', 'attributedConversions30d',
+                 'attributedConversions30dSameSKU', 'attributedConversions7d', 'attributedConversions7dSameSKU',
+                 'attributedSales14d', 'attributedSales14dSameSKU', 'attributedSales1d', 'attributedSales1dSameSKU',
+                 'attributedSales30d', 'attributedSales30dSameSKU', 'attributedSales7d', 'attributedSales7dSameSKU',
+                 'attributedUnitsOrdered14d', 'attributedUnitsOrdered14dSameSKU', 'attributedUnitsOrdered1d',
+                 'attributedUnitsOrdered1dSameSKU', 'attributedUnitsOrdered30d', 'attributedUnitsOrdered30dSameSKU',
+                 'attributedUnitsOrdered7d', 'attributedUnitsOrdered7dSameSKU', 'campaignBudget', 'campaignBudgetType',
+                 'campaignId', 'campaignName', 'campaignStatus', 'clicks', 'cost', 'impressions', 'targetId',
+                 'targetingExpression', 'targetingText', 'targetingType']
+
+            )
+        }
+
+
+class SponsoredProductsReportSearchTermsKeywordStream(SponsoredProductsReportKeywordsStream):
+    TABLE = 'sponsored_products_report_search_terms_keyword'
+
+    def get_body(self, day):
+        body = super().get_body(day)
+        body["segment"] = "query"
+        return body
+
+
+class SponsoredProductsReportSearchTermsTargetStream(SponsoredProductsReportTargetStream):
+    TABLE = 'sponsored_products_report_search_terms_target'
+
+    def get_body(self, day):
+        body = super().get_body(day)
+        body["segment"] = "query"
+        return body

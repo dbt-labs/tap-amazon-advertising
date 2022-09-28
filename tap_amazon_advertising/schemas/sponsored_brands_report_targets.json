@@ -1,0 +1,179 @@
+{
+  "type": "object",
+  "properties": {
+    "adGroupId": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "adGroupName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "attributedConversions14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedConversions14dSameSKU": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedDetailPageViewsClicks14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedOrderRateNewToBrand14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedOrdersNewToBrand14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedOrdersNewToBrandPercentage14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedSales14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedSales14dSameSKU": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedSalesNewToBrand14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedSalesNewToBrandPercentage14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedUnitsOrderedNewToBrand14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedUnitsOrderedNewToBrandPercentage14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "campaignBudget": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "campaignBudgetType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "campaignId": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "campaignName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "campaignStatus": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "clicks": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "cost": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "dpv14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "impressions": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "targetId": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "targetingExpression": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "targetingText": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "targetingType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "unitsSold14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedBrandedSearches14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    }
+  }
+}

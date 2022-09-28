@@ -261,3 +261,87 @@ class SponsoredBrandsVideoReportCampaignsStream(BaseSponsoredBrandsReportStream)
             ]),
             "creativeType": "video"
         }
+
+
+class SponsoredBrandsReportSearchTermsStream(SponsoredBrandsReportKeywordsStream):
+    TABLE = 'sponsored_brands_report_search_terms'
+
+    def get_body(self, day):
+        body = super().get_body(day)
+        body["segment"] = "query"
+        body["metrics"] = ",".join(
+            ['adGroupId', 'adGroupName', 'attributedConversions14d', 'attributedSales14d', 'campaignBudget',
+             'campaignBudgetType', 'campaignId', 'campaignName', 'campaignStatus', 'clicks', 'cost', 'impressions',
+             'keywordBid', 'keywordId', 'keywordStatus', 'keywordText', 'matchType',
+             'searchTermImpressionRank', 'searchTermImpressionShare']
+        )
+        return body
+
+
+class SponsoredBrandsVideoReportSearchTermsStream(SponsoredBrandsVideoReportKeywordsStream):
+    TABLE = 'sponsored_brands_video_report_search_terms'
+
+    def get_body(self, day):
+        body = super().get_body(day)
+        body["segment"] = "query"
+        body["metrics"] = ",".join(
+            ['adGroupId', 'adGroupName', 'attributedConversions14d', 'attributedSales14d', 'campaignBudget',
+             'campaignBudgetType', 'campaignStatus', 'clicks', 'cost', 'impressions', 'keywordBid', 'keywordId',
+             'keywordStatus', 'keywordText', 'matchType', 'vctr', 'video5SecondViewRate', 'video5SecondViews',
+             'videoCompleteViews', 'videoFirstQuartileViews', 'videoMidpointViews', 'videoThirdQuartileViews',
+             'videoUnmutes', 'viewableImpressions', 'vtr']
+        )
+        return body
+
+
+class SponsoredBrandsReportTargets(BaseSponsoredBrandsReportStream):
+    TABLE = "sponsored_brands_report_targets"
+    KEY_PROPERTIES = ['targetId', 'day', 'profileId']
+
+    @property
+    def recordType(self):
+        return "targets"
+
+    def get_body(self, day):
+        return {
+            "reportDate": day.strftime('%Y%m%d'),
+            "metrics": ",".join(
+                ['adGroupId', 'adGroupName', 'attributedConversions14d', 'attributedConversions14dSameSKU',
+                 'attributedDetailPageViewsClicks14d', 'attributedOrderRateNewToBrand14d',
+                 'attributedOrdersNewToBrand14d', 'attributedOrdersNewToBrandPercentage14d', 'attributedSales14d',
+                 'attributedSales14dSameSKU', 'attributedSalesNewToBrand14d', 'attributedSalesNewToBrandPercentage14d',
+                 'attributedUnitsOrderedNewToBrand14d', 'attributedUnitsOrderedNewToBrandPercentage14d',
+                 'campaignBudget', 'campaignBudgetType', 'campaignId', 'campaignName', 'campaignStatus', 'clicks',
+                 'cost', 'dpv14d', 'impressions', 'targetId', 'targetingExpression', 'targetingText', 'targetingType',
+                 'unitsSold14d', 'attributedBrandedSearches14d']
+
+            )
+        }
+
+
+class SponsoredBrandsVideoReportTargets(BaseSponsoredBrandsReportStream):
+    TABLE = "sponsored_brands_video_report_targets"
+    KEY_PROPERTIES = ['targetId', 'day', 'profileId']
+
+    @property
+    def recordType(self):
+        return "targets"
+
+    def get_body(self, day):
+        return {
+            "reportDate": day.strftime('%Y%m%d'),
+            "metrics": ",".join(
+                ['adGroupId', 'adGroupName', 'attributedConversions14d', 'attributedConversions14dSameSKU',
+                 'attributedSales14d', 'attributedSales14dSameSKU', 'campaignBudget', 'campaignBudgetType',
+                 'campaignId', 'campaignName', 'campaignStatus', 'clicks', 'cost', 'impressions', 'targetId',
+                 'targetingExpression', 'targetingText', 'targetingType', 'vctr', 'video5SecondViewRate',
+                 'video5SecondViews', 'videoCompleteViews', 'videoFirstQuartileViews', 'videoMidpointViews',
+                 'videoThirdQuartileViews', 'videoUnmutes', 'viewableImpressions', 'vtr', 'dpv14d',
+                 'attributedDetailPageViewsClicks14d', 'attributedOrderRateNewToBrand14d',
+                 'attributedOrdersNewToBrand14d', 'attributedOrdersNewToBrandPercentage14d',
+                 'attributedSalesNewToBrand14d', 'attributedSalesNewToBrandPercentage14d',
+                 'attributedUnitsOrderedNewToBrand14d', 'attributedUnitsOrderedNewToBrandPercentage14d',
+                 'attributedBrandedSearches14d']
+            ),
+            "creativeType": "all"
+        }

@@ -1,60 +1,10 @@
 {
   "type": "object",
   "properties": {
-    "profileId": {
-      "description": "The ID of the profile",
-      "type": "integer"
-    },
-    "day": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "keywordId": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "keywordText": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "matchType": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
     "adGroupId": {
       "type": [
         "null",
-        "integer"
-      ]
-    },
-    "campaignId": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "asin": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "sku": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "currency": {
-      "type": [
-        "null",
-        "string"
+        "number"
       ]
     },
     "adGroupName": {
@@ -63,127 +13,7 @@
         "string"
       ]
     },
-    "campaignName": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "cost": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "impressions": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "clicks": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales7d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales30d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedUnitsOrdered30d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales1d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedConversions1d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales1dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedConversions30d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedConversions7d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
     "attributedConversions14d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedConversions7dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedConversions1dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedUnitsOrdered7d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales7dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales14dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales30dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedUnitsOrdered1d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedConversions30dSameSKU": {
       "type": [
         "null",
         "number"
@@ -201,43 +31,7 @@
         "number"
       ]
     },
-    "attributedKindleEditionNormalizedPagesRead14d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedKindleEditionNormalizedPagesRoyalties14d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedUnitsOrdered14dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedUnitsOrdered1dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedUnitsOrdered30dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedUnitsOrdered14d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedUnitsOrdered7dSameSKU": {
+    "attributedSales14dSameSKU": {
       "type": [
         "null",
         "number"
@@ -255,16 +49,184 @@
         "string"
       ]
     },
+    "campaignId": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "campaignName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "campaignStatus": {
       "type": [
         "null",
         "string"
       ]
     },
-    "keywordStatus": {
+    "clicks": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "cost": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "impressions": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "targetId": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "targetingExpression": {
       "type": [
         "null",
         "string"
+      ]
+    },
+    "targetingText": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "targetingType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "vctr": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "video5SecondViewRate": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "video5SecondViews": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "videoCompleteViews": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "videoFirstQuartileViews": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "videoMidpointViews": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "videoThirdQuartileViews": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "videoUnmutes": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "viewableImpressions": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "vtr": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "dpv14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedDetailPageViewsClicks14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedOrderRateNewToBrand14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedOrdersNewToBrand14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedOrdersNewToBrandPercentage14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedSalesNewToBrand14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedSalesNewToBrandPercentage14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedUnitsOrderedNewToBrand14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedUnitsOrderedNewToBrandPercentage14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedBrandedSearches14d": {
+      "type": [
+        "null",
+        "number"
       ]
     }
   }

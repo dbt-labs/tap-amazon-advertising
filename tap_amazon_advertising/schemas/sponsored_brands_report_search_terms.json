@@ -1,0 +1,127 @@
+{
+  "type": "object",
+  "properties": {
+    "adGroupId": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "adGroupName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "attributedConversions14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedSales14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "campaignBudget": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "campaignBudgetType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "campaignId": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "campaignName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "campaignStatus": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "clicks": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "cost": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "impressions": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "keywordBid": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "keywordId": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "keywordStatus": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "keywordText": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "matchType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "query": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "searchTermImpressionRank": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "searchTermImpressionShare": {
+      "type": [
+        "null",
+        "number"
+      ]
+    }
+  }
+}
+
+

@@ -89,6 +89,78 @@
         },
         "attributedSales14d": {
             "type": ["null", "number"]
+        },
+        "keywordBid": {
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "keywordStatus": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "dpv14d": {
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "attributedDetailPageViewsClicks14d": {
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "attributedOrderRateNewToBrand14d": {
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "attributedOrdersNewToBrand14d": {
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "attributedOrdersNewToBrandPercentage14d": {
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "attributedSalesNewToBrand14d": {
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "attributedSalesNewToBrandPercentage14d": {
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "attributedUnitsOrderedNewToBrand14d": {
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "attributedUnitsOrderedNewToBrandPercentage14d": {
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "attributedBrandedSearches14d": {
+            "type": [
+                "null",
+                "number"
+            ]
         }
     }
 }

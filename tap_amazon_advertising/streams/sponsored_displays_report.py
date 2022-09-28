@@ -219,3 +219,34 @@ class SponsoredDisplaysReportCampaignsAudiencesStream(SponsoredDisplaysReportCam
         body = super().get_body(day)
         body["tactic"] = "T00030"
         return body
+
+
+class SponsoredDisplaysReportTargetsStream(BaseSponsoredDisplaysReportStream):
+    TABLE = 'sponsored_displays_report_targets'
+    KEY_PROPERTIES = ['targetId', 'day', 'profileId']
+
+    def get_body(self, day):
+        return {
+            "tactic": "T00020",
+            "reportDate": day.strftime('%Y%m%d'),
+            "metrics": ",".join(
+                ['adGroupId', 'adGroupName', 'attributedConversions14d', 'attributedConversions14dSameSKU',
+                 'attributedConversions1d', 'attributedConversions1dSameSKU', 'attributedConversions30d',
+                 'attributedConversions30dSameSKU', 'attributedConversions7d', 'attributedConversions7dSameSKU',
+                 'attributedDetailPageView14d', 'attributedOrdersNewToBrand14d', 'attributedSales14d',
+                 'attributedSales14dSameSKU', 'attributedSales1d', 'attributedSales1dSameSKU', 'attributedSales30d',
+                 'attributedSales30dSameSKU', 'attributedSales7d', 'attributedSales7dSameSKU',
+                 'attributedSalesNewToBrand14d', 'attributedUnitsOrdered14d', 'attributedUnitsOrdered1d',
+                 'attributedUnitsOrdered30d', 'attributedUnitsOrdered7d', 'attributedUnitsOrderedNewToBrand14d',
+                 'campaignId', 'campaignName', 'clicks', 'cost', 'currency', 'impressions', 'targetId',
+                 'targetingExpression', 'targetingText', 'targetingType', 'viewImpressions',
+                 'viewAttributedConversions14d', 'viewAttributedDetailPageView14d', 'viewAttributedSales14d',
+                 'viewAttributedUnitsOrdered14d', 'viewAttributedOrdersNewToBrand14d',
+                 'viewAttributedSalesNewToBrand14d', 'viewAttributedUnitsOrderedNewToBrand14d',
+                 'attributedBrandedSearches14d', 'viewAttributedBrandedSearches14d']
+                )
+        }
+
+    @property
+    def recordType(self):
+        return "targets"

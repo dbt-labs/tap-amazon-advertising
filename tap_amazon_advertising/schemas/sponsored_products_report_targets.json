@@ -1,60 +1,10 @@
 {
   "type": "object",
   "properties": {
-    "profileId": {
-      "description": "The ID of the profile",
-      "type": "integer"
-    },
-    "day": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "keywordId": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "keywordText": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "matchType": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
     "adGroupId": {
       "type": [
         "null",
-        "integer"
-      ]
-    },
-    "campaignId": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "asin": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "sku": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "currency": {
-      "type": [
-        "null",
-        "string"
+        "number"
       ]
     },
     "adGroupName": {
@@ -63,127 +13,7 @@
         "string"
       ]
     },
-    "campaignName": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "cost": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "impressions": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "clicks": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales7d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales30d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedUnitsOrdered30d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales1d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedConversions1d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales1dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedConversions30d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedConversions7d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
     "attributedConversions14d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedConversions7dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedConversions1dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedUnitsOrdered7d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales7dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales14dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedSales30dSameSKU": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedUnitsOrdered1d": {
-      "type": [
-        "null",
-        "number"
-      ]
-    },
-    "attributedConversions30dSameSKU": {
       "type": [
         "null",
         "number"
@@ -195,19 +25,91 @@
         "number"
       ]
     },
+    "attributedConversions1d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedConversions1dSameSKU": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedConversions30d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedConversions30dSameSKU": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedConversions7d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedConversions7dSameSKU": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
     "attributedSales14d": {
       "type": [
         "null",
         "number"
       ]
     },
-    "attributedKindleEditionNormalizedPagesRead14d": {
+    "attributedSales14dSameSKU": {
       "type": [
         "null",
         "number"
       ]
     },
-    "attributedKindleEditionNormalizedPagesRoyalties14d": {
+    "attributedSales1d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedSales1dSameSKU": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedSales30d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedSales30dSameSKU": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedSales7d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedSales7dSameSKU": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedUnitsOrdered14d": {
       "type": [
         "null",
         "number"
@@ -219,7 +121,19 @@
         "number"
       ]
     },
+    "attributedUnitsOrdered1d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
     "attributedUnitsOrdered1dSameSKU": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedUnitsOrdered30d": {
       "type": [
         "null",
         "number"
@@ -231,7 +145,7 @@
         "number"
       ]
     },
-    "attributedUnitsOrdered14d": {
+    "attributedUnitsOrdered7d": {
       "type": [
         "null",
         "number"
@@ -255,16 +169,76 @@
         "string"
       ]
     },
+    "campaignId": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "campaignName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "campaignStatus": {
       "type": [
         "null",
         "string"
       ]
     },
-    "keywordStatus": {
+    "clicks": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "cost": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "impressions": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "targetId": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "targetingExpression": {
       "type": [
         "null",
         "string"
+      ]
+    },
+    "targetingText": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "targetingType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "attributedKindleEditionNormalizedPagesRead14d": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributedKindleEditionNormalizedPagesRoyalties14d": {
+      "type": [
+        "null",
+        "number"
       ]
     }
   }

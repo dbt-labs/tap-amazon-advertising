@@ -80,6 +80,39 @@
         },
         "attributedUnitsOrderedNewToBrandPercentage14d": {
             "type": ["null", "number"]
+        },
+        "applicableBudgetRuleId": {
+            "type": ["null", "number"]
+        },
+        "applicableBudgetRuleName": {
+            "type": ["null", "string"]
+        },
+        "attributedDetailPageViewsClicks14d": {
+            "type": ["null", "number"]
+        },
+        "campaignRuleBasedBudget": {
+            "type": ["null", "number"]
+        },
+        "dpv14d": {
+            "type": ["null", "number"]
+        },
+        "keywordBid": {
+            "type": ["null", "number"]
+        },
+        "keywordStatus": {
+            "type": ["null", "string"]
+        },
+        "searchTermImpressionRank": {
+            "type": ["null", "number"]
+        },
+        "searchTermImpressionShare": {
+            "type": ["null", "number"]
+        },
+        "unitsSold14d": {
+            "type": ["null", "number"]
+        },
+        "attributedBrandedSearches14d": {
+            "type": ["null", "number"]
         }
     }
 }
