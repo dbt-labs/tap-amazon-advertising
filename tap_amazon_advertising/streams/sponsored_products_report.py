@@ -272,6 +272,7 @@ class SponsoredProductsReportTargetStream(BaseSponsoredProductsReportStream):
 
 class SponsoredProductsReportSearchTermsKeywordStream(SponsoredProductsReportKeywordsStream):
     TABLE = 'sponsored_products_report_search_terms_keyword'
+    KEY_PROPERTIES = ['keywordId', 'day', 'profileId']
 
     def get_body(self, day):
         body = super().get_body(day)
@@ -281,6 +282,7 @@ class SponsoredProductsReportSearchTermsKeywordStream(SponsoredProductsReportKey
 
 class SponsoredProductsReportSearchTermsTargetStream(SponsoredProductsReportTargetStream):
     TABLE = 'sponsored_products_report_search_terms_target'
+    KEY_PROPERTIES = ['targetId', 'day', 'profileId']
 
     def get_body(self, day):
         body = super().get_body(day)
